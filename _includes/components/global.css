@@ -1,0 +1,95 @@
+*,
+*::before,
+*::after {
+	box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+}
+
+/*@media (prefers-reduced-motion: no-preference) {
+	html {
+		scroll-behavior: smooth;
+	}
+}*/
+
+body {
+	color: var(--color-gray-L800);
+	line-height: 1.5;
+	font-family: var(--font-secondary);
+	padding: 0;
+	overflow-y: scroll;
+}
+
+a {
+	color: currentColor;
+}
+
+abbr[title] {
+	text-decoration: none;
+}
+
+img {
+	display: block;
+	max-width: 100%;
+}
+
+/* Focus visible polyfill
+ * https://github.com/WICG/focus-visible
+ */
+.js-focus-visible :focus:not(.focus-visible) {
+	outline: none;
+}
+.js-focus-visible .focus-visible {
+	outline-color: var(--color-focus-ring);
+}
+@supports (box-shadow: none) {
+	.js-focus-visible .focus-visible {
+		outline: none;
+		box-shadow: 0 0 1px 4px var(--color-focus-ring);
+	}
+}
+
+.pancake {
+	margin-top: 3rem;
+}
+.pancake,
+.grid {
+	padding: 0 1rem;
+}
+
+.pancake,
+.grid {
+	display: grid;
+	grid-template-columns: [full-start] minmax(2rem, 1fr) [standard-start] 0 [narrow-start] minmax(1rem, 67.5rem) [narrow-end] 0 [standard-end] minmax(2rem, 1fr) [full-end];
+	position: relative;
+	padding: 0;
+}
+
+.grid-narrow {
+	grid-column: narrow;
+}
+
+@media (min-width: 50rem) /* > 800px */ {
+	.pancake,
+	.grid {
+		grid-template-columns: [full-start] minmax(2rem, 1fr) [standard-start] 3.75rem [narrow-start] minmax(1rem, 67.5rem) [narrow-end] 3.75rem [standard-end] minmax(2rem, 1fr) [full-end];
+	}
+}
+
+/* Animations */
+@keyframes slideUpBounce {
+	0% { opacity: 0; transform: translateY(20px)}
+	60% { opacity: 1; }
+	60% { transform: translateY(-5px) }
+	100% { opacity: 1; transform: translateY(0) }
+}
+
+@keyframes slideUp {
+	0% { opacity: 0; transform: translateY(15px)}
+	100% { opacity: 1; transform: translateY(0) }
+}
+
+[hidden],
+.hidden {
+	display: none!important;
+}

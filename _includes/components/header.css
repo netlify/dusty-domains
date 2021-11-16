@@ -1,0 +1,76 @@
+.header-main {
+	--header-padding: 1.5em;
+	padding: var(--header-padding) 0;
+	background-color: var(--color-yellow-Y200);
+	background-image: url(static/dust-temp.jpg);
+	background-size: 300px auto;
+	background-position: 50% 50%;
+	background-blend-mode: hard-light;
+}
+
+.header-main > .grid {
+	min-height: calc(85vh - var(--header-padding)*2);
+	grid-template-rows: auto 1fr;
+}
+
+.header-main section {
+	display: grid;
+	place-content: center;
+	justify-items: center;
+	text-align: center;
+}
+
+.header-main h1 {
+	margin-bottom: .3em;
+	max-width: 400px;
+}
+
+.header-main p {
+	font-size: 1.3em;
+	max-width: 500px;
+}
+
+.nav-main {
+	display: flex;
+	gap: 2em;
+}
+
+.masthead .netlify-logo > svg {
+	width: 100px;
+	height: auto;
+}
+
+.nav-main a {
+	font-weight: 700;
+	text-decoration: none;
+}
+
+.nav-main a:hover {
+	text-decoration: underline;
+}
+
+@media screen and (max-width: 500px) {
+	.header-main .masthead {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		gap: 1em;
+	}
+
+	.nav-main {
+		justify-content: center;
+	}
+}
+
+@media screen and (min-width: 501px) {
+	.masthead {
+		display: flex;
+		justify-content: flex-end;
+		align-items: center;
+		gap: 2em;
+	}
+
+	.masthead .netlify-logo {
+		margin-right: auto;
+	}
+}

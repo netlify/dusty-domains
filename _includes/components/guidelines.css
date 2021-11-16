@@ -1,0 +1,51 @@
+.guidelines-grid {
+	margin-top: 4em;
+	display: grid;
+	grid-template-columns: repeat(auto-fit,minmax(350px,1fr));
+	gap: 1em;
+}
+
+.guidelines-steps {
+	counter-reset: steps-counter;
+}
+
+.guidelines-steps li {
+	counter-increment: steps-counter;
+	list-style: none;
+	display: grid;
+	grid-template-columns: auto 1fr;
+	gap: 1em;
+}
+
+.guidelines-steps li::before,
+.guidelines-steps li::after {
+	width: 40px;
+	height: 40px;
+	grid-column: 1;
+	grid-row: 1;
+	border-radius: 50%;
+}
+
+.guidelines-steps li::before {
+	content: '';
+	background-color: var(--color-red-R500);
+	margin: 3px 0 0 3px;
+}
+
+.guidelines-steps li::after {
+	content: counter(steps-counter);
+	display: grid;
+	place-content: center;
+	border: var(--ui-border);
+	color: white;
+}
+
+.guidelines-illo {
+	display: grid;
+	place-content: center;
+}
+
+.guidelines-illo p {
+	padding: 3em;
+	border: var(--ui-border);
+}

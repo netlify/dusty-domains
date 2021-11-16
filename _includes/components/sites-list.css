@@ -1,0 +1,65 @@
+.sites-list.featured {
+	margin-top:  3em;
+	margin-bottom: -4em;
+}
+
+#showcase .sites-list {
+	margin-top: 3em;
+	margin-bottom: -2em;
+}
+
+.sites-list {
+	width: 100%;
+	max-width: 800px;
+	margin-left: auto;
+	margin-right: auto;
+	position: relative;
+	z-index: 10;
+}
+
+.sites-item {
+	margin-bottom: 1.5em;
+	padding: .5em 1em;
+	position: relative;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	background-color: white;
+	border: var(--ui-border);
+	border-bottom: none;
+	font-weight: 700;
+	text-decoration: none;
+	transition: all 100ms ease-in-out;
+}
+
+.sites-item::after {
+	content: '';
+	width: 100%;
+	height: 2em;
+	margin-top: 2em;
+	position:  absolute;
+	left: 0;
+	bottom:  -2.05em;
+	display: block;
+	background-color: var(--color-gray-L200);
+	border: var(--ui-border);
+	transform:  perspective(400px) rotateX(-30deg) translateZ(-.5em);
+	transition: all 100ms ease-in-out;
+}
+
+.sites-item:hover {
+	transform: translateY(-1em) scale(1.03);
+}
+
+.sites-item:hover::after {
+	height: 3.3em;
+	transform: perspective(400px) rotateX(-40deg) translateZ(-1.3em);
+	bottom: -3.7em;
+	background-color: var(--color-teal-T400);
+}
+
+.sites-item span {
+	font-size:  80%;
+	text-transform: uppercase;
+	color: var(--color-gray-L600);
+}

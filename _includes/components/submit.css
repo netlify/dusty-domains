@@ -1,0 +1,18 @@
+.submit-grid {
+	margin-top: 3em;
+}
+
+.submit-grid h2,
+.submit-grid p {
+	text-align: center;
+}
+
+.submit-form {
+	margin-top: 3em;
+}
+
+form fieldset {
+	padding: 1em;
+	border: var(--ui-border);
+	border-bottom: none;
+}
