@@ -20,5 +20,9 @@
   "homepage": "https://github.com/netlify/dusty-domains#readme",
   "devDependencies": {
     "@11ty/eleventy": "^0.12.1"
+  },
+  "dependencies": {
+    "airtable": "^0.11.1",
+    "node-fetch": "^2.6.0"
   }
 }
