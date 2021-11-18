@@ -1,6 +1,6 @@
 const submissionForm = document.querySelector(".submit-form");
 
-const handleFormSubmission = async (e) => {
+submissionForm.onsubmit = async (e) => {
   e.preventDefault();
   const formData = new FormData(submissionForm);
 
