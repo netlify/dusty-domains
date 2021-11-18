@@ -1,10 +1,10 @@
-.sites-list.featured {
+.featured .sites-list {
 	margin-top:  3em;
 	margin-bottom: -4em;
 }
 
 #showcase .sites-list {
-	margin-top: 3em;
+	margin-top: 5em;
 	margin-bottom: -2em;
 }
 
@@ -13,14 +13,33 @@
 	max-width: 800px;
 	margin-left: auto;
 	margin-right: auto;
-	position: relative;
 	z-index: 10;
 }
 
 .sites-item {
-	margin-bottom: 1.5em;
-	padding: .5em 1em;
+	margin: 0;
 	position: relative;
+	list-style: none;
+	min-height: 2.5em;
+}
+
+.sites-item:not(:first-child) {
+	margin-top: 1.4em;
+}
+
+.sites-item a {
+	width: 100%;
+	padding-bottom: 2.14em;
+	display: block;
+	position: absolute;
+	bottom: 0;
+	text-decoration: none;
+	transition: all 100ms ease-in-out;
+}
+
+.sites-item .title {
+	padding: 0 1em;
+	height: 2.5em;
 	display: flex;
 	justify-content: space-between;
 	align-items: center;
@@ -32,34 +51,46 @@
 	transition: all 100ms ease-in-out;
 }
 
-.sites-item::after {
-	content: '';
+.sites-item .date {
+	font-size: 70%;
+	text-transform: uppercase;
+	color: var(--color-gray-L600);
+}
+
+.sites-item figure {
 	width: 100%;
 	height: 2em;
-	margin-top: 2em;
 	position:  absolute;
 	left: 0;
-	bottom:  -2.05em;
+	bottom: 0;
 	display: block;
 	background-color: var(--color-gray-L200);
 	border: var(--ui-border);
-	transform:  perspective(400px) rotateX(-30deg) translateZ(-.5em);
+	transform:  perspective(400px) rotateX(-30deg) translateZ(-.6em);
 	transition: all 100ms ease-in-out;
+	overflow: hidden;
 }
 
-.sites-item:hover {
-	transform: translateY(-1em) scale(1.03);
+.sites-item figure img {
+	width: 100%;
+	opacity: 0;
+	transition: opacity 100ms ease-in-out;
 }
 
-.sites-item:hover::after {
-	height: 3.3em;
-	transform: perspective(400px) rotateX(-40deg) translateZ(-1.3em);
-	bottom: -3.7em;
-	background-color: var(--color-teal-T400);
+.sites-item a:hover {
+	padding-bottom: 10.4em;
 }
 
-.sites-item span {
-	font-size:  80%;
-	text-transform: uppercase;
-	color: var(--color-gray-L600);
+.sites-item a:hover .title {
+	transform: scale(1.03);
+	background-color: var(--color-teal-T200);
+}
+
+.sites-item a:hover figure {
+	height: 10.3em;
+	transform: perspective(400px) rotateX(-11deg) translateZ(-.25em);
+}
+
+.sites-item a:hover figure img {
+	opacity: .8;
 }
