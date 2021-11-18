@@ -15,6 +15,11 @@
 	display: grid;
 	grid-template-columns: auto 1fr;
 	gap: 1em;
+	align-items: center;
+}
+
+.guidelines-steps li > * {
+	grid-column: 2;
 }
 
 .guidelines-steps li::before,
@@ -24,6 +29,7 @@
 	grid-column: 1;
 	grid-row: 1;
 	border-radius: 50%;
+	align-self: start;
 }
 
 .guidelines-steps li::before {

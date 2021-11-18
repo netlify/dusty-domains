@@ -8,11 +8,49 @@
 }
 
 .submit-form {
-	margin-top: 3em;
+	max-width: 600px;
+	margin: 3em auto 0;
 }
 
-form fieldset {
-	padding: 1em;
+.submit-form fieldset {
+	padding: 2em;
+	display: flex;
+	flex-direction: column;
 	border: var(--ui-border);
 	border-bottom: none;
+}
+
+.submit-form input,
+.submit-form button {
+	font-family: var(--font-secondary);
+}
+
+.submit-form input {
+	width: 100%;
+	margin-top: .4em;
+	padding: .3em .5em;
+	display: block;
+	border: 1px solid var(--color-gray-L800);
+	border-radius: 4px;
+	font-size: 1.2em;
+	outline: none;
+	transition: box-shadow ease-in-out .15s;
+}
+
+.submit-form input[required]::after {
+	content: 'required';
+}
+
+
+.submit-form input + * {
+	display: block;
+	margin-top: 1.5em;
+}
+
+.submit-form input:focus {
+	box-shadow: 0 0 1px 4px var(--color-focus-ring);
+}
+
+.submit-form button {
+	align-self: flex-end;
 }
