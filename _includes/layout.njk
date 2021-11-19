@@ -5,11 +5,14 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
 		<meta name="description" content="">
 		<title>Dusty Domains</title>
+		<link rel="icon" type="image/png" href="/static/favicon-32x32.png" sizes="32x32">
+		<link rel="icon" type="image/png" href="/static/favicon-16x16.png" sizes="16x16">
 		<style>
 		{% include "components/variables.css" %}
 		{% include "components/global.css" %}
 		{% include "components/type.css" %}
 		{% include "components/buttons.css" %}
+		{% include "components/textures.css" %}
 		{% include "components/header.css" %}
 		{% include "components/sites-list.css" %}
 		{% include "components/guidelines.css" %}
@@ -21,16 +24,16 @@
 	</head>
 	<body class={{ bodyClass }}>
 		<!-- Header -->
-		<header class="header-main">
+		<header class="header-main dusty">
 			<div class="grid">
 				<div class="masthead grid-narrow">
 					<a href="/" class="netlify-logo">
 						{% include "_includes/components/_svg/netlify-logo" %}
 					</a>
 					<nav class="nav-main">
-						<a href="#guidelines">Guidelines</a>
-						<a href="#submit">Submit</a>
-						<a href="#showcase">Showcase</a>
+						<a href="/#guidelines">Guidelines</a>
+						<a href="/#submit">Submit</a>
+						<a href="/#showcase">Showcase</a>
 					</nav>
 				</div>
 				<section class="grid-narrow">

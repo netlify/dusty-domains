@@ -1,15 +1,11 @@
 .header-main {
 	--header-padding: 1.5em;
 	padding: var(--header-padding) 0;
-	background-color: var(--color-yellow-Y200);
-	background-image: url(/static/dust-temp.jpg);
-	background-size: 300px auto;
-	background-position: 50% 50%;
-	background-blend-mode: hard-light;
 }
 
 .header-main > .grid {
-	min-height: calc(85vh - var(--header-padding)*2);
+	min-height: 550px;
+	height: calc(85vh - var(--header-padding)*2);
 	grid-template-rows: auto 1fr;
 }
 

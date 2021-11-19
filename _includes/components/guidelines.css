@@ -10,6 +10,7 @@
 }
 
 .guidelines-steps li {
+	margin-top: 1.6em;
 	counter-increment: steps-counter;
 	list-style: none;
 	display: grid;

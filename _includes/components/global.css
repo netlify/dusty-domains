@@ -76,19 +76,6 @@ img {
 	}
 }
 
-/* Animations */
-@keyframes slideUpBounce {
-	0% { opacity: 0; transform: translateY(20px)}
-	60% { opacity: 1; }
-	60% { transform: translateY(-5px) }
-	100% { opacity: 1; transform: translateY(0) }
-}
-
-@keyframes slideUp {
-	0% { opacity: 0; transform: translateY(15px)}
-	100% { opacity: 1; transform: translateY(0) }
-}
-
 [hidden],
 .hidden {
 	display: none!important;
