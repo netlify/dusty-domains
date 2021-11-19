@@ -19,7 +19,26 @@
 		{% include "components/footer.css" %}
 		</style>
 	</head>
-	<body>
+	<body class={{ bodyClass }}>
+		<!-- Header -->
+		<header class="header-main">
+			<div class="grid">
+				<div class="masthead grid-narrow">
+					<a href="/" class="netlify-logo">
+						{% include "_includes/components/_svg/netlify-logo" %}
+					</a>
+					<nav class="nav-main">
+						<a href="#guidelines">Guidelines</a>
+						<a href="#submit">Submit</a>
+						<a href="#showcase">Showcase</a>
+					</nav>
+				</div>
+				<section class="grid-narrow">
+					<h1>{{ headline }}</h1>
+					<p>{{ subhead }}</p>
+				</section>
+			</div>
+		</header>
 		{{ content | safe }}
 	</body>
 </html>
