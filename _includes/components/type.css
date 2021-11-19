@@ -24,3 +24,7 @@ main ol,
 main ul {
 	margin-top: 1.2em;
 }
+
+.content a:hover {
+	color: var(--color-teal-T600);
+}

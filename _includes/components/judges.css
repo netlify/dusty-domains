@@ -26,6 +26,10 @@
 	pointer-events: none;
 }
 
+.judges-list .judge-avatar {
+	display: block;
+}
+
 .judges-list a {
 	text-decoration: none;
 	font-size: 90%;

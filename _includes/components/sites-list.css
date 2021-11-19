@@ -82,20 +82,36 @@
 	transition: opacity 100ms ease-in-out;
 }
 
-.sites-item a:hover {
+/* Hover and focus states */
+.sites-item a:focus-visible {
+	box-shadow: none;
+}
+
+.sites-item a:hover,
+.sites-item a:focus-visible {
 	padding-bottom: 10.4rem;
 }
 
-.sites-item a:hover .site-title {
+.sites-item a:hover .site-title,
+.sites-item a:focus-visible .site-title {
 	transform: scale(1.03);
 	background-color: var(--color-teal-T200);
 }
 
-.sites-item a:hover figure {
+.sites-item a:focus-visible .site-title {
+	box-shadow: 0 0 1px 4px var(--color-focus-ring);
+}
+.sites-item a:focus-visible figure {
+	box-shadow: 0 4px 1px 4px var(--color-focus-ring);
+}
+
+.sites-item a:hover figure,
+.sites-item a:focus-visible figure {
 	height: 10.3rem;
 	transform: perspective(400px) rotateX(-11deg) translateZ(-.25rem);
 }
 
-.sites-item a:hover figure img {
+.sites-item a:hover figure img,
+.sites-item a:focus-visible figure img {
 	opacity: .8;
 }

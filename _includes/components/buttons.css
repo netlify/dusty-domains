@@ -16,3 +16,8 @@ button:hover,
 .button:hover {
 	background-color: var(--color-teal-T200);
 }
+
+button:focus-visible,
+.button:focus-visible {
+	box-shadow: 0 0 1px 4px var(--color-teal-T600);
+}

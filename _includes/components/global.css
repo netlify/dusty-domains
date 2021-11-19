@@ -36,7 +36,7 @@ img {
 /* Focus visible polyfill
  * https://github.com/WICG/focus-visible
  */
-.js-focus-visible :focus:not(.focus-visible) {
+/*.js-focus-visible :focus:not(.focus-visible) {
 	outline: none;
 }
 .js-focus-visible .focus-visible {
@@ -44,6 +44,20 @@ img {
 }
 @supports (box-shadow: none) {
 	.js-focus-visible .focus-visible {
+		outline: none;
+		box-shadow: 0 0 1px 4px var(--color-focus-ring);
+	}
+}*/
+
+/* CSS only focus */
+:focus:not(:focus-visible) {
+	outline: none;
+}
+:focus-visible {
+	outline-color: var(--color-focus-ring);
+}
+@supports (box-shadow: none) {
+	:focus-visible {
 		outline: none;
 		box-shadow: 0 0 1px 4px var(--color-focus-ring);
 	}
