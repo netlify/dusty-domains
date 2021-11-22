@@ -1,29 +1,5 @@
 const fetch = require("node-fetch");
 const Airtable = require("airtable");
-const chromium = require("chrome-aws-lambda");
-const puppeteer = require("puppeteer-core")
-const cloudinary = require("cloudinary").v2;
-
-const takeScreenshot = async (url) => {
-  const browser = await puppeteer.launch({
-    executablePath: process.env.CHROME_EXECUTABLE_PATH || await chromium.executablePath,
-    args: chromium.args,
-    headless: true,
-  });
-  const page = await browser.newPage();
-  await page.goto(url);
-
-  let screenshotBase64 = await page
-    .screenshot({ encoding: "base64" })
-    .then(function (data) {
-      let base64Encode = `data:image/png;base64,${data}`;
-      return base64Encode;
-    });
-
-  await browser.close();
-
-  return screenshotBase64;
-};
 
 exports.handler = async (event) => {
   const AIRTABLE_BASE_ID = process.env.AIRTABLE_BASE_ID;
@@ -37,33 +13,13 @@ exports.handler = async (event) => {
       : false;
 
   if (isNetlifySite) {
-    const screenshot = await takeScreenshot(submission.URL);
-
-    cloudinary.config({
-      cloud_name: process.env.CLOUDINARY_CLOUD_NAME,
-      api_key: process.env.CLOUDINARY_API_KEY,
-      api_secret: process.env.CLOUDINARY_API_SECRET,
-    });
-
-    const cloudinaryResp = await cloudinary.uploader.upload(
-      screenshot,
-      {
-        folder: "dusty-domains",
-      },
-      function (error, result) {
-        console.log(error);
-      }
-    );
-
-    const screenshotCloudinaryUrl = cloudinaryResp.secure_url;
-
     var base = new Airtable({ apiKey: AIRTABLE_API_KEY }).base(
       AIRTABLE_BASE_ID
     );
     base("Submissions").create(
       [
         {
-          fields: { ...submission, screenshot: screenshotCloudinaryUrl },
+          fields: submission,
         },
       ],
       function (err, records) {
