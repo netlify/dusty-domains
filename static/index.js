@@ -13,7 +13,7 @@ submissionForm.onsubmit = async (e) => {
       Name: formData.get("name"),
       Email: formData.get("email"),
       URL: formData.get("url"),
-      "Years unused": parseInt(formData.get("date")),
+      "Years unused": parseInt(formData.get("site-date")),
     }),
   });
 
