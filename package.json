@@ -27,6 +27,6 @@
     "cloudinary": "^1.23.0",
     "focus-visible": "^5.2.0",
     "node-fetch": "^2.6.0",
-    "puppeteer-core": "^11.0.0"
+    "puppeteer": "^11.0.0"
   }
 }
