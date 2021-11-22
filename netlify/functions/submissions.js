@@ -1,10 +1,10 @@
 const fetch = require("node-fetch");
 const Airtable = require("airtable");
-const puppeteer = require("puppeteer");
+const chromium = require("chrome-aws-lambda");
 const cloudinary = require("cloudinary").v2;
 
 const takeScreenshot = async (url) => {
-  const browser = await puppeteer.launch();
+  const browser = await chromium.puppeteer.launch();
   const page = await browser.newPage();
   await page.goto(url);
 
