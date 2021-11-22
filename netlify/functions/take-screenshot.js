@@ -1,7 +1,7 @@
 const fetch = require("node-fetch");
 const chromium = require("chrome-aws-lambda");
 const puppeteer = require("puppeteer-core");
-const cloudinary = require("cloudinary").v2;
+// const cloudinary = require("cloudinary").v2;
 
 const takeScreenshot = async (url) => {
   const browser = await puppeteer.launch({
@@ -36,25 +36,26 @@ exports.handler = async (event) => {
   if (isNetlifySite) {
     const screenshot = await takeScreenshot(submissionURL);
 
-    cloudinary.config({
-      cloud_name: process.env.CLOUDINARY_CLOUD_NAME,
-      api_key: process.env.CLOUDINARY_API_KEY,
-      api_secret: process.env.CLOUDINARY_API_SECRET,
-    });
+    // cloudinary.config({
+    //   cloud_name: process.env.CLOUDINARY_CLOUD_NAME,
+    //   api_key: process.env.CLOUDINARY_API_KEY,
+    //   api_secret: process.env.CLOUDINARY_API_SECRET,
+    // });
 
-    const cloudinaryResp = await cloudinary.uploader.upload(
-      screenshot,
-      {
-        folder: "dusty-domains",
-      },
-      function (error, result) {
-        console.log(error);
-      }
-    );
+    // const cloudinaryResp = await cloudinary.uploader.upload(
+    //   screenshot,
+    //   {
+    //     folder: "dusty-domains",
+    //   },
+    //   function (error, result) {
+    //     console.log(error);
+    //   }
+    // );
 
     return {
       statusCode: 200,
-      body: JSON.stringify(cloudinaryResp.secure_url),
+      // body: JSON.stringify(cloudinaryResp.secure_url),
+      body: "Hello",
     };
   } else {
     return {

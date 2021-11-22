@@ -19,23 +19,25 @@ submissionForm.onsubmit = async (e) => {
     body: JSON.stringify(submissionDetails.URL),
   });
 
-  const screenshotURL = await screenshotRes.json();
+  console.log(screenshotRes);
 
-  const submissionRes = await fetch("/.netlify/functions/submissions", {
-    method: "POST",
-    headers: {
-      "Content-Type": "application/json",
-    },
-    body: JSON.stringify({
-      Name: formData.get("name"),
-      Email: formData.get("email"),
-      URL: formData.get("url"),
-      "Years unused": parseInt(formData.get("site-date")),
-      screenshot: screenshotURL,
-    }),
-  });
+  // const screenshotURL = await screenshotRes.json();
 
-  const data = await submissionRes.json();
+  // const submissionRes = await fetch("/.netlify/functions/submissions", {
+  //   method: "POST",
+  //   headers: {
+  //     "Content-Type": "application/json",
+  //   },
+  //   body: JSON.stringify({
+  //     Name: formData.get("name"),
+  //     Email: formData.get("email"),
+  //     URL: formData.get("url"),
+  //     "Years unused": parseInt(formData.get("site-date")),
+  //     screenshot: screenshotURL,
+  //   }),
+  // });
 
-  return data;
+  // const data = await submissionRes.json();
+
+  // return data;
 };
