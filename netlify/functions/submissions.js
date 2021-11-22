@@ -1,5 +1,22 @@
 const fetch = require("node-fetch");
 const Airtable = require("airtable");
+const puppeteer = require("puppeteer");
+
+// const takeScreenshot = async () => {
+//   // 1. Launch the browser
+//   const browser = await puppeteer.launch();
+
+//   // 2. Open a new page
+//   const page = await browser.newPage();
+
+//   // 3. Navigate to URL
+//   await page.goto("https://bitsofco.de");
+
+//   // 4. Take screenshot
+//   await page.screenshot({ path: "screenshot.png" });
+
+//   await browser.close();
+// };
 
 exports.handler = async (event) => {
   const AIRTABLE_BASE_ID = process.env.AIRTABLE_BASE_ID;
@@ -14,25 +31,28 @@ exports.handler = async (event) => {
       : false;
 
   if (isNetlifySite) {
-    var base = new Airtable({ apiKey: AIRTABLE_API_KEY }).base(
-      AIRTABLE_BASE_ID
-    );
-    base("Submissions").create(
-      [
-        {
-          fields: submission,
-        },
-      ],
-      function (err, records) {
-        if (err) {
-          console.error(err);
-          return;
-        }
-        records.forEach(function (record) {
-          // console.log(record);
-        });
-      }
-    );
+    // var base = new Airtable({ apiKey: AIRTABLE_API_KEY }).base(
+    //   AIRTABLE_BASE_ID
+    // );
+    // base("Submissions").create(
+    //   [
+    //     {
+    //       fields: submission,
+    //     },
+    //   ],
+    //   function (err, records) {
+    //     if (err) {
+    //       console.error(err);
+    //       return;
+    //     }
+    //     records.forEach(function (record) {
+    //       // console.log(record);
+    //     });
+    //   }
+    // );
+
+    await takeScreenshot();
+
     return {
       statusCode: 200,
       body: "Your site has been successfully submitted! Woop, Woop! 🥳",
