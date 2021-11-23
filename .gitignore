@@ -4,3 +4,4 @@ package-lock.json
 _site
 # Local Netlify folder
 .netlify
+.env
