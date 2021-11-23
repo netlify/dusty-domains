@@ -27,7 +27,12 @@ exports.handler = async (event) => {
 
   const screenshotURL = cloudinaryResp.secure_url;
 
-  const submission = { ...data.submissionDetails, screenshot: screenshotURL };
+  const { ["screenshotBase64"]: remove, ...rest } = data;
+
+  const submissionData = {
+    ...rest,
+    screenshot: screenshotURL,
+  };
 
   // Step 2: upload to Airtable
 
@@ -35,7 +40,7 @@ exports.handler = async (event) => {
   base("Submissions").create(
     [
       {
-        fields: submission,
+        fields: submissionData,
       },
     ],
     function (err, records) {

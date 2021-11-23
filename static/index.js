@@ -27,7 +27,7 @@ submissionForm.onsubmit = async (e) => {
       "Content-Type": "application/json",
     },
     body: JSON.stringify({
-      submissionDetails,
+      ...submissionDetails,
       screenshotBase64: screenshotBase64Data,
     }),
   });
