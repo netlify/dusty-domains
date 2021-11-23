@@ -1,7 +1,7 @@
 .guidelines-grid {
 	display: grid;
 	grid-template-columns: repeat(auto-fit,minmax(350px,1fr));
-	gap: 1em;
+	gap: 1.5em;
 	font-size: 1.1em;
 }
 
@@ -48,11 +48,13 @@
 }
 
 .guidelines-illo {
+	padding: 2em;
 	display: grid;
 	place-content: center;
 }
 
-.guidelines-illo p {
+.guidelines-illo .temp {
 	padding: 3em;
 	border: var(--ui-border);
+	text-transform: uppercase;
 }

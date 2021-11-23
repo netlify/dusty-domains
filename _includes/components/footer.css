@@ -1,5 +1,6 @@
 .footer-main {
-	padding: 5em 0 2em;
+	margin-top: 5em;
+	padding: 3em 0 2em;
 	background-color: var(--color-teal-T800);
 	color: white;
 	text-align: center;
@@ -8,4 +9,9 @@
 .footer-main .netlify-logo {
 	display: inline-block;
 	margin-top: 1em;
+}
+
+.landing .footer-main {
+	margin-top: 0;
+	padding-top: 5em;
 }
