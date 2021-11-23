@@ -4,8 +4,7 @@
 }
 
 .header-main > .grid {
-	min-height: 550px;
-	height: calc(85vh - var(--header-padding)*2);
+	height: 550px;
 	grid-template-rows: auto 1fr;
 }
 
