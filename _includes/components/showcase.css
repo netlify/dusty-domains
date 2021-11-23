@@ -3,6 +3,15 @@
 	padding-top: 3em;
 }
 
+.showcase-grid {
+	position: relative;
+}
+
 .showcase-grid h2 {
 	text-align: center;
+}
+
+.showcase-grid .sites-list {
+	margin-top: 5em;
+	margin-bottom: -1.5em;
 }
