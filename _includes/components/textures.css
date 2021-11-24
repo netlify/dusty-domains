@@ -10,12 +10,12 @@
 
 .dusty.dusty-dark {
 	background-color: var(--texture-color-dark);
-	background-image: url(/static/dust-temp.jpg);
+	background-image: url(/static/dust-dark.jpg);
 	background-blend-mode: overlay;
 	color: white;
 }
 
 .dusty.dusty-light {
 	background-color: var(--text-color-light);
-	background-image: url(/static/dust-texture.jpg);
+	background-image: url(/static/dust-light.jpg);
 }
