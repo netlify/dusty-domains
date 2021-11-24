@@ -42,7 +42,7 @@ exports.handler = async (event) => {
   } else {
     return {
       statusCode: 418,
-      body: "It looks like the site you submitted is not a Netlify site, how dare you. 🙄", //To do: Probably change this to a not-so-aggressive error message 😂
+      body: "It looks like the site you submitted is not a Netlify site, so we can't accept it as submission!",
     };
   }
 };
