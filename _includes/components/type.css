@@ -18,6 +18,18 @@ h3 {
 	font-size:  1.8em;
 }
 
+@media screen and (max-width: 400px) {
+	h1 {
+		font-size: 3em;
+	}
+	h2 {
+		font-size: 2em;
+	}
+	h3 {
+		font-size: 1em;
+	}
+}
+
 p.headline {
 	font-size: 1.4em;
 	font-family: var(--font-headline);
