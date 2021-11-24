@@ -1,9 +1,19 @@
 .judges-grid {
 	grid-column: narrow;
 	text-align: center;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	font-size: 1.1em;
+}
+
+.judges-grid p {
+	max-width: 500px;
 }
 
 .judges-list {
+	width: 100%;
+	margin-top: 3em;
 	list-style-type: none;
 	display: grid;
 	grid-template-columns: repeat(auto-fit,minmax(150px,1fr));
