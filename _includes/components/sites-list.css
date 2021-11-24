@@ -1,10 +1,7 @@
-.featured .sites-list {
-	margin-top:  -3em;
-}
-
-#showcase .sites-list {
-	margin-top: 5em;
-	margin-bottom: -2em;
+.sites-list {
+	display: flex;
+	flex-direction: column;
+	justify-content: flex-end;
 }
 
 .sites-list {
@@ -17,21 +14,16 @@
 
 .sites-item {
 	margin: 0;
+	margin-bottom: -.6em;
 	position: relative;
 	list-style: none;
-	min-height: 2.5em;
-}
-
-.sites-item:not(:first-child) {
-	margin-top: 1.4em;
 }
 
 .sites-item a {
 	width: 100%;
 	padding-bottom: 2.14rem;
 	display: block;
-	position: absolute;
-	bottom: 0;
+	position: relative;
 	text-decoration: none;
 	transition: all 100ms ease-in-out;
 }
@@ -65,13 +57,14 @@
 .sites-item figure {
 	width: 100%;
 	height: 2rem;
-	position:  absolute;
+	position: absolute;
 	left: 0;
-	bottom: 0;
+	bottom: .15rem;
 	display: block;
 	background-color: var(--color-gray-L200);
 	border: var(--ui-border);
-	transform:  perspective(400px) rotateX(-30deg) translateZ(-.6rem);
+	transform:  perspective(400px) rotateX(-30deg);
+	transform-origin: 50% 0;
 	transition: all 100ms ease-in-out;
 	overflow: hidden;
 }
@@ -89,7 +82,7 @@
 
 .sites-item a:hover,
 .js-focus-visible .sites-item a.focus-visible {
-	padding-bottom: 10.4rem;
+	padding-bottom: 10.3rem;
 }
 
 .sites-item a:hover .site-title,
@@ -108,7 +101,8 @@
 .sites-item a:hover figure,
 .js-focus-visible .sites-item a.focus-visible figure {
 	height: 10.3rem;
-	transform: perspective(400px) rotateX(-11deg) translateZ(-.25rem);
+	bottom: 0;
+	transform: scale(1.03) perspective(400px) rotateX(-10deg);
 }
 
 .sites-item a:hover figure img,

@@ -17,7 +17,6 @@
 	display: flex;
 	flex-direction: column;
 	border: var(--ui-border);
-	border-bottom: none;
 }
 
 .submit-form input,

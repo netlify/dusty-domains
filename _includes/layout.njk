@@ -7,14 +7,26 @@
 		<title>Dusty Domains</title>
 		<link rel="icon" type="image/png" href="/static/favicon-32x32.png" sizes="32x32">
 		<link rel="icon" type="image/png" href="/static/favicon-16x16.png" sizes="16x16">
+		<meta property="og:type" content="website">
+		<meta name="twitter:card" content="summary_large_image">
+		<meta content="@Netlify" name="twitter:site">
+		<meta content="@Netlify" name="twitter:creator">
+		<meta content="Dusty Domains" name="twitter:title" property="og:title">
+		<meta content="Dust off those unused domains and ship a site to Netlify for charity." name="twitter:description" property="og:description">
+		<!-- TODO: Add final domain -->
+		<meta content="" property="og:url">
+		<meta content="" property="twitter:url">
+		<meta content="/static/og.png" property="og:image">
+		<meta content="/static/og.png" name="twitter:image">
 		<style>
 		{% include "components/variables.css" %}
 		{% include "components/global.css" %}
 		{% include "components/type.css" %}
 		{% include "components/buttons.css" %}
 		{% include "components/textures.css" %}
-		{% include "components/header.css" %}
 		{% include "components/sites-list.css" %}
+		{% include "components/header.css" %}
+		{% include "components/featured.css" %}
 		{% include "components/guidelines.css" %}
 		{% include "components/judges.css" %}
 		{% include "components/submit.css" %}
@@ -24,7 +36,7 @@
 	</head>
 	<body class={{ bodyClass }}>
 		<!-- Header -->
-		<header class="header-main dusty">
+		<header class="header-main dusty dusty-dark">
 			<div class="grid">
 				<div class="masthead grid-narrow">
 					<a href="/" class="netlify-logo">
@@ -38,7 +50,7 @@
 				</div>
 				<section class="grid-narrow">
 					<h1>{{ headline }}</h1>
-					<p>{{ subhead }}</p>
+					<p><span>{{ subhead }}</span></p>
 				</section>
 			</div>
 		</header>

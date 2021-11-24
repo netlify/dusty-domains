@@ -1,9 +1,19 @@
 .judges-grid {
 	grid-column: narrow;
 	text-align: center;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	font-size: 1.1em;
+}
+
+.judges-grid p {
+	max-width: 500px;
 }
 
 .judges-list {
+	width: 100%;
+	margin-top: 3em;
 	list-style-type: none;
 	display: grid;
 	grid-template-columns: repeat(auto-fit,minmax(150px,1fr));
@@ -14,17 +24,6 @@
 	position: relative;
 }
 
-.judges-list li:before {
-	content: '';
-	width: 100%;
-	aspect-ratio: 1;
-	display: block;
-	position: absolute;
-	left: -8px;
-	top: -8px;
-	border: var(--ui-border);
-	pointer-events: none;
-}
 
 .judges-list .judge-avatar {
 	display: block;
@@ -35,7 +34,24 @@
 	font-size: 90%;
 }
 
+.judges-list a::before {
+	content: '';
+	width: 100%;
+	aspect-ratio: 1;
+	display: block;
+	position: absolute;
+	left: -8px;
+	top: -8px;
+	border: var(--ui-border);
+	pointer-events: none;
+	transition: all 150ms ease-in-out;
+}
+
 .judges-list a:hover {
 	text-decoration: underline;
+}
+
+.judges-list a:hover::before {
+	transform: translate(-4px,-4px);
 }
 
