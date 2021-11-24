@@ -30,6 +30,10 @@ main ul {
 	margin-top: 1.2em;
 }
 
+.content {
+	font-size: 1.1em;
+}
+
 .content a:hover {
 	color: var(--color-teal-T600);
 }
