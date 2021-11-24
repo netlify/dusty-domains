@@ -109,7 +109,4 @@
   --shadow-deep: 0px 16px 24px rgba(0, 0, 0, 0.07), 0px 6px 30px rgba(0, 0, 0, 0.06), 0px 8px 10px rgba(0, 0, 0, 0.1);
   --ui-border: 1px solid var(--color-gray-L800);
 
-  /* Site specific */
-  --texture-color: #F5DD99;
-
 }
