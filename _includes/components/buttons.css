@@ -14,6 +14,11 @@ button,
 button:hover,
 .button:hover {
 	background-color: var(--color-teal-T200);
+	cursor: pointer;
+}
+
+button:disabled{
+	cursor: not-allowed;
 }
 
 .js-focus-visible button.focus-visible,

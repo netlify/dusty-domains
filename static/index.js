@@ -4,6 +4,9 @@ submissionForm.onsubmit = async (e) => {
   e.preventDefault();
   const formData = new FormData(submissionForm);
 
+  // Disable submit button to avoid submitting multiple times
+  e.submitter.disabled = true;
+
   const submissionDetails = {
     Name: formData.get("name"),
     Email: formData.get("email"),
@@ -21,7 +24,7 @@ submissionForm.onsubmit = async (e) => {
 
   const screenshotBase64Data = await screenshotRes.json();
 
-  await fetch("/.netlify/functions/upload", {
+  const uploadRes = await fetch("/.netlify/functions/upload", {
     method: "POST",
     headers: {
       "Content-Type": "application/json",
@@ -31,4 +34,8 @@ submissionForm.onsubmit = async (e) => {
       screenshotBase64: screenshotBase64Data,
     }),
   });
+
+  if(uploadRes){
+    window.location = window.location.href + "thanks";
+  }
 };
