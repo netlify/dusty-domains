@@ -7,7 +7,7 @@ var dataDir;
 
 // Construct the data object for submissions
 const fetchSubmissions = async() => {
-    const response = await fetch(`https://api.airtable.com/v0/${AIRTABLE_BASE_ID}/Submissions?maxRecords=10000&view=Grid%20view&api_key=${AIRTABLE_API_KEY}`);
+    const response = await fetch(`https://api.airtable.com/v0/${AIRTABLE_BASE_ID}/Submissions?maxRecords=10000&view=Approved&api_key=${AIRTABLE_API_KEY}`);
     const data = await response.json();
     return data.records;
 }
