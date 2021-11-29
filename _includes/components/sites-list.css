@@ -28,6 +28,10 @@
 	transition: all 100ms ease-in-out;
 }
 
+.sites-item a.disabled {
+	pointer-events: none;
+}
+
 .sites-item .site-title {
 	padding: 0 1rem;
 	height: 2.5rem;

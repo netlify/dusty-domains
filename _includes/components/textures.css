@@ -1,5 +1,5 @@
 :root {
-  --texture-color-light: var(--color-yellow-Y200);
+  --texture-color-light: #f5dd99;
   --texture-color-dark:var(--color-gray-L700);
 }
 

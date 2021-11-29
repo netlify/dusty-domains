@@ -1,32 +1,59 @@
 ---
 layout: layout.njk
 bodyClass: thanks
-headline: "Thanks!"
-subhead: "+ huge congrats on shipping something new!"
 ---
+
+<!-- Header -->
+<header class="header-main dusty dusty-dark">
+	<div class="grid">
+		{% include "_includes/components/nav-main.njk" %}
+		<section class="grid-narrow">
+
+			<!-- Option 1 (domain is 1+ years old) -->
+			<h1 class="thanks1"><span>I just shipped a </span><span class="site-age">3-year-old</span> <strong>Dusty Domain</strong> <span class="netlify">on {% include "_includes/components/_svg/netlify-logo" %}</span></h1>
+
+			<!-- Option 2 (domain is <1 year old) -->
+			{# <h1 class="thanks2"><span>I just bought a domain</span> <span>& shipped the project in</span> <span>the same dang year</span> <small>(please clap)</small></h1> #}
+
+			<!-- Option 3 (no custom domain) -->
+			{# <h1 class="thanks3"><span>I just shipped a </span><strong>Dusty Domain</strong> <span class="netlify">on {% include "_includes/components/_svg/netlify-logo" %}</span></h1> #}
+
+			<p><span>Check out my site that contributed [$$] to [charity]. 👇</span></p>
+		</section>
+	</div>
+</header>
+
+<!-- Featured sites -->
+<div class="grid" id="featured">
+	<div class="grid-narrow featured-grid">
+		<ul class="sites-list" id="featured-list">
+			<li class="sites-item">
+				<a href="https://hawk.dance/">
+					<span class="site-title">hawk.dance
+						<span class="site-date">3 years dusty</span>
+					</span>
+					<figure>
+						<img src="/static/hawk-dance.jpg" alt="screenshot of website" />
+					</figure>
+				</a>
+			</li>
+		</ul>
+	</div>
+</div>
 
 <main>
 	<section class="pancake">
 		<div class="thanks-grid grid-narrow">
 			<div class="thanks-copy content">
 				<h2>What’s next</h2>
-				<p>After a quick review, we’ll add your site to the <a href="#showcase">showcase</a>. Check out what others have made, too.</p>
-				<p>Brag to your buds about finally shipping that domain:</p>
-				
-				<h3>Share Cards</h3>
-				<p>Here’s some images for your tweets and posts.</p>
-				<!-- TODO: generate custom cards + alts + where will they be hosted? -->
-				<div class="cards-list">
-					<div class="card">
-						<img src="/static/card1.png" alt="I just shipped a Dusty Domain on Netlify. 0 years since domain went unused." width="1200" height="630" />
-					</div>
-					<div class="card">
-						<img src="/static/card2.png" alt="I just shipped a 3-year-old Dusty Domain" width="1200" height="630" />
-					</div>
-				</div>
+				<p>After a quick review, we’ll add your site to the <a href="#showcase">showcase</a>. Be sure to check out what others have made, too.</p>
+				<h3>Sing it loud</h3>
+				<p>You’ve earned serious bragging rights today.</p>
+				<!-- TODO: Do we want this to craft a tweet for them? -->
+				<p><button>Share your success</button></p>
 
-				<h3>Badges</h3>
-				<p>Or add a badge to your site or your project’s README.</p>
+				<h3>Add some flair</h3>
+				<p>Add a badge to your site or your project’s README.</p>
 				<!-- TODO: generate custom badges + alts + where will they be hosted? -->
 				<div class="badges-list">
 					<div class="badge">
@@ -70,3 +97,4 @@ subhead: "+ huge congrats on shipping something new!"
 		</div>
 	</div>
 </footer>
+<script src="/static/thanks.js"></script>

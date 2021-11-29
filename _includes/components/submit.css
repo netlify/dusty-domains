@@ -98,3 +98,14 @@ div.submit-helper p::before {
 		transform: rotate(360deg);
 	}
 }
+
+.submit-cta {
+	text-align: center;
+	font-size: 110%;
+}
+
+.submit-cta span {
+	background-color: var(--texture-color-light);
+	-webkit-box-decoration-break: clone;
+	box-decoration-break: clone;
+}

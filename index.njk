@@ -1,9 +1,18 @@
 ---
 layout: layout.njk
 bodyClass: landing
-headline: "Dusty Domains"
-subhead: "This December, deploy a site to Netlify and turn that dusty domain you’ve been squatting on into [$$] for [charity]."
 ---
+
+<!-- Header -->
+<header class="header-main dusty dusty-dark">
+	<div class="grid">
+		{% include "_includes/components/nav-main.njk" %}
+		<section class="grid-narrow">
+			<h1>Dusty Domains</h1>
+			<p><span>This December, deploy a site to Netlify and turn that dusty domain you’ve been squatting on into [$$] for [charity]</span></p>
+		</section>
+	</div>
+</header>
 
 <!-- Featured sites -->
 <div class="grid" id="featured">
@@ -15,27 +24,27 @@ subhead: "This December, deploy a site to Netlify and turn that dusty domain you
 						<span class="site-date">Inspiration</span>
 					</span>
 					<figure>
-						<img src="static/hawk-dance.jpg" alt="screenshot of website" />
+						<img src="/static/hawk-dance.jpg" alt="screenshot of website" />
 					</figure>
 				</a>
 			</li>
 			<li class="sites-item">
-				<a href="https://www.burgers.dev/">
-					<span class="site-title">burgers.dev
+				<a href="https://theuselessweb.com/">
+					<span class="site-title">theuselessweb.com
 						<span class="site-date">Inspiration</span>
 					</span>
 					<figure>
-						<img src="static/burger-showdown.jpg" alt="screenshot of website" />
+						<img src="/static/the-useless-web.jpg" alt="screenshot of website" />
 					</figure>
 				</a>
 			</li>
 			<li class="sites-item">
-				<a href="https://whichbeardisthis.com/">
-					<span class="site-title">whichbeardisthis.com
+				<a href="https://davidrose.style/">
+					<span class="site-title">davidrose.style
 						<span class="site-date">Inspiration</span>
 					</span>
 					<figure>
-						<img src="static/which-beard-is-this.jpg" alt="screenshot of website" />
+						<img src="/static/dress-david-rose.jpg" alt="screenshot of website" />
 					</figure>
 				</a>
 			</li>
@@ -71,32 +80,56 @@ subhead: "This December, deploy a site to Netlify and turn that dusty domain you
 			<ul class="judges-list">
 				<li>
 					<a href="https://twitter.com/twholman" class="judge-avatar">
-						<img src="static/tim-holman.jpg" alt="Tim Holman" />
+						<img src="/static/tim-holman.jpg" alt="Tim Holman" />
 						Tim Holman
 					</a>
 				</li>
 				<li>
 					<a href="https://twitter.com/nikkitaftw?lang=en" class="judge-avatar">
-						<img src="static/sara-vieira.jpg" alt="Sara Vieira" />
+						<img src="/static/sara-vieira.jpg" alt="Sara Vieira" />
 						Sara Vieira
 					</a>
 				</li>
 				<li>
 					<a href="https://twitter.com/lauragift_" class="judge-avatar">
-						<img src="static/gift-egwuenu.jpg" alt="Gift Egwuenu" />
+						<img src="/static/gift-egwuenu.jpg" alt="Gift Egwuenu" />
 						Gift Egwuenu
 					</a>
 				</li>
 				<li>
-					<a href="#" class="judge-avatar">
-						<img src="static/avatar-temp.jpg" alt="David Rose" />
-						David Rose
+					<a href="https://www.linkedin.com/in/brianldouglas/" class="judge-avatar">
+						<img src="/static/brian-douglas.jpg" alt="Brian Douglas" />
+						Brian Douglas
 					</a>
 				</li>
 				<li>
-					<a href="#" class="judge-avatar">
-						<img src="static/avatar-temp.jpg" alt="David Rose" />
-						David Rose
+					<a href="https://twitter.com/jlengstorf" class="judge-avatar">
+						<img src="/static/jason-lengstorf.jpg" alt="Jason Lengstorf" />
+						Jason Lengstorf
+					</a>
+				</li>
+				<li>
+					<a href="https://twitter.com/devdevcharlie" class="judge-avatar">
+						<img src="/static/charlie-gerard.jpg" alt="Charlie Gerard" />
+						Charlie Gerard
+					</a>
+				</li>
+				<li>
+					<a href="https://twitter.com/cassidoo" class="judge-avatar">
+						<img src="/static/cassidy-williams.jpg" alt="Cassidy Williams" />
+						Cassidy Williams
+					</a>
+				</li>
+				<li>
+					<a href="https://twitter.com/Tzmanics" class="judge-avatar">
+						<img src="/static/tara-z-manicsic.jpg" alt="Tara Z. Manicsic" />
+						Tara Z. Manicsic
+					</a>
+				</li>
+				<li>
+					<a href="https://twitter.com/lynnandtonic" class="judge-avatar">
+						<img src="/static/lynn-fisher.jpg" alt="Lynn Fisher" />
+						Lynn Fisher
 					</a>
 				</li>
 			</ul>
@@ -134,54 +167,28 @@ subhead: "This December, deploy a site to Netlify and turn that dusty domain you
 	<section class="pancake dusty dusty-light" id="showcase">
 		<div class="showcase-grid grid-narrow">
 			<h2>Showcase</h2>
+			<!-- call to action until we have some sites to showcase -->
+			<p class="submit-cta">
+				<span>Submit your site and we’ll showcase it here.</span>
+			</p>
 			<ul class="sites-list" id="showcase-list">
 				<li class="sites-item">
-					<a href="#">
-						<span class="site-title">sleepy-hodgkin-7c6ffe.netlify.app
-							<span class="site-date">Fresh</span>
+					<a href="#" class="disabled">
+						<span class="site-title">your cool site here
+							<span class="site-date">2 years dusty</span>
 						</span>
 						<figure>
-							<img src="static/nestflix.png" alt="" />
+							<img src="/static/nestflix.png" alt="" />
 						</figure>
 					</a>
 				</li>
 				<li class="sites-item">
-					<a href="#">
-						<span class="site-title">hamburger.fun
-							<span class="site-date">2 years dusty</span>
+					<a href="#" class="disabled">
+						<span class="site-title">your great domain here
+							<span class="site-date">3 years dusty</span>
 						</span>
 						<figure>
-							<img src="static/nestflix.png" alt="" />
-						</figure>
-					</a>
-				</li>
-				<li class="sites-item">
-					<a href="#">
-						<span class="site-title">hamburger.fun
-							<span class="site-date">2 years dusty</span>
-						</span>
-						<figure>
-							<img src="static/nestflix.png" alt="" />
-						</figure>
-					</a>
-				</li>
-				<li class="sites-item">
-					<a href="#">
-						<span class="site-title">hamburger.fun
-							<span class="site-date">2 years dusty</span>
-						</span>
-						<figure>
-							<img src="static/nestflix.png" alt="" />
-						</figure>
-					</a>
-				</li>
-				<li class="sites-item">
-					<a href="#">
-						<span class="site-title">hamburger.fun
-							<span class="site-date">2 years dusty</span>
-						</span>
-						<figure>
-							<img src="static/nestflix.png" alt="" />
+							<img src="/static/nestflix.png" alt="" />
 						</figure>
 					</a>
 				</li>
