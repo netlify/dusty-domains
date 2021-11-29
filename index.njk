@@ -182,10 +182,29 @@ subhead: "This December, deploy a site to Netlify and turn that dusty domain you
 						</figure>
 					</a>
 				</li>
+
+				<!-- LOOK! Data pulled from Airtable via the plugin -->
+				{% for site in submissions %}
+				<li class="sites-item">
+					<a href="#">
+						<span class="site-title">{{ site.fields.URL}}
+							<span class="site-date">{{ site.fields["Years unused"] }}</span>
+						</span>
+						<figure>
+							<img src="{{ site.fields.screenshot}}" alt="" />
+						</figure>
+					</a>
+				</li>
+				{% endfor %}
+
+
 			</ul>
 		</div>
 	</section>
 </main>
+
+
+
 
 <!-- Footer -->
 <footer class="footer-main">
