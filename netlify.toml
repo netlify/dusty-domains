@@ -4,3 +4,11 @@
 [functions]
     node_bundler = "esbuild"
     external_node_modules = ["chrome-aws-lambda"]
+
+[[plugins]]
+  
+  package = "./netlify/plugins/airtable-feed/index.js"
+
+  [plugins.inputs]
+    # Directory for the generated JSON data files to reside in
+    dataDir = "_data"
