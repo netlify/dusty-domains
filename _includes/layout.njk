@@ -36,26 +36,7 @@
 		</style>
 	</head>
 	<body class={{ bodyClass }}>
-		<!-- Header -->
-		<header class="header-main dusty dusty-dark">
-			<div class="grid">
-				<div class="masthead grid-narrow">
-					<a href="/" class="netlify-logo">
-						{% include "_includes/components/_svg/netlify-logo" %}
-					</a>
-					<nav class="nav-main">
-						<a href="/#guidelines">Guidelines</a>
-						<a href="/#submit">Submit</a>
-						<a href="/#showcase">Showcase</a>
-					</nav>
-				</div>
-				<section class="grid-narrow">
-					<h1>{{ headline }}</h1>
-					<p><span>{{ subhead }}</span></p>
-				</section>
-			</div>
-		</header>
 		{{ content | safe }}
-		<script src="./static/focus-visible.min.js"></script>
+		<script src="/static/focus-visible.min.js"></script>
 	</body>
 </html>

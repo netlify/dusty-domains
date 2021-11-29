@@ -1,9 +1,18 @@
 ---
 layout: layout.njk
 bodyClass: landing
-headline: "Dusty Domains"
-subhead: "This December, deploy a site to Netlify and turn that dusty domain you’ve been squatting on into [$$] for [charity]."
 ---
+
+<!-- Header -->
+<header class="header-main dusty dusty-dark">
+	<div class="grid">
+		{% include "_includes/components/nav-main.njk" %}
+		<section class="grid-narrow">
+			<h1>Dusty Domains</h1>
+			<p><span>This December, deploy a site to Netlify and turn that dusty domain you’ve been squatting on into [$$] for [charity]</span></p>
+		</section>
+	</div>
+</header>
 
 <!-- Featured sites -->
 <div class="grid" id="featured">
@@ -15,7 +24,7 @@ subhead: "This December, deploy a site to Netlify and turn that dusty domain you
 						<span class="site-date">Inspiration</span>
 					</span>
 					<figure>
-						<img src="static/hawk-dance.jpg" alt="screenshot of website" />
+						<img src="/static/hawk-dance.jpg" alt="screenshot of website" />
 					</figure>
 				</a>
 			</li>
@@ -25,7 +34,7 @@ subhead: "This December, deploy a site to Netlify and turn that dusty domain you
 						<span class="site-date">Inspiration</span>
 					</span>
 					<figure>
-						<img src="static/the-useless-web.jpg" alt="screenshot of website" />
+						<img src="/static/the-useless-web.jpg" alt="screenshot of website" />
 					</figure>
 				</a>
 			</li>
@@ -35,7 +44,7 @@ subhead: "This December, deploy a site to Netlify and turn that dusty domain you
 						<span class="site-date">Inspiration</span>
 					</span>
 					<figure>
-						<img src="static/dress-david-rose.jpg" alt="screenshot of website" />
+						<img src="/static/dress-david-rose.jpg" alt="screenshot of website" />
 					</figure>
 				</a>
 			</li>
@@ -71,31 +80,31 @@ subhead: "This December, deploy a site to Netlify and turn that dusty domain you
 			<ul class="judges-list">
 				<li>
 					<a href="https://twitter.com/twholman" class="judge-avatar">
-						<img src="static/tim-holman.jpg" alt="Tim Holman" />
+						<img src="/static/tim-holman.jpg" alt="Tim Holman" />
 						Tim Holman
 					</a>
 				</li>
 				<li>
 					<a href="https://twitter.com/nikkitaftw?lang=en" class="judge-avatar">
-						<img src="static/sara-vieira.jpg" alt="Sara Vieira" />
+						<img src="/static/sara-vieira.jpg" alt="Sara Vieira" />
 						Sara Vieira
 					</a>
 				</li>
 				<li>
 					<a href="https://twitter.com/lauragift_" class="judge-avatar">
-						<img src="static/gift-egwuenu.jpg" alt="Gift Egwuenu" />
+						<img src="/static/gift-egwuenu.jpg" alt="Gift Egwuenu" />
 						Gift Egwuenu
 					</a>
 				</li>
 				<li>
 					<a href="https://www.linkedin.com/in/brianldouglas/" class="judge-avatar">
-						<img src="static/brian-douglas.jpg" alt="Brian Douglas" />
+						<img src="/static/brian-douglas.jpg" alt="Brian Douglas" />
 						Brian Douglas
 					</a>
 				</li>
 				<li>
 					<a href="#" class="judge-avatar">
-						<img src="static/avatar-temp.jpg" alt="David Rose" />
+						<img src="/static/avatar-temp.jpg" alt="David Rose" />
 						David Rose
 					</a>
 				</li>
@@ -145,7 +154,7 @@ subhead: "This December, deploy a site to Netlify and turn that dusty domain you
 							<span class="site-date">2 years dusty</span>
 						</span>
 						<figure>
-							<img src="static/nestflix.png" alt="" />
+							<img src="/static/nestflix.png" alt="" />
 						</figure>
 					</a>
 				</li>
@@ -155,7 +164,7 @@ subhead: "This December, deploy a site to Netlify and turn that dusty domain you
 							<span class="site-date">3 years dusty</span>
 						</span>
 						<figure>
-							<img src="static/nestflix.png" alt="" />
+							<img src="/static/nestflix.png" alt="" />
 						</figure>
 					</a>
 				</li>
