@@ -1,5 +1,7 @@
 .featured-grid {
 	position: relative;
+	display: flex;
+	justify-content: center;
 }
 
 #featured {

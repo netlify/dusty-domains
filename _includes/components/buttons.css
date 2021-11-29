@@ -19,6 +19,7 @@ button:hover,
 
 button:disabled{
 	cursor: not-allowed;
+	filter: grayscale(100%);
 }
 
 .js-focus-visible button.focus-visible,

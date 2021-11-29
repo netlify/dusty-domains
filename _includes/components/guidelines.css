@@ -53,6 +53,7 @@
 
 .guidelines-illo {
 	padding: 2em;
+	padding-bottom: 0;
 	display: grid;
 	place-content: center;
 }

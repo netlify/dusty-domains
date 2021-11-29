@@ -26,17 +26,13 @@
 
 .judges-list .judge-avatar {
 	display: block;
+	height: auto;
 }
 
-.judges-list a {
-	text-decoration: none;
-	font-size: 90%;
-}
-
-.judges-list a::before {
+.judges-list .judge-avatar::before {
 	content: '';
 	width: 100%;
-	aspect-ratio: 1;
+	height: 88%;
 	display: block;
 	position: absolute;
 	left: -8px;
@@ -46,11 +42,24 @@
 	transition: all 150ms ease-in-out;
 }
 
-.judges-list a:hover {
-	text-decoration: underline;
+@supports (aspect-ratio: 1) {
+	.judges-list .judge-avatar::before {
+		height: auto;
+		aspect-ratio: 1;
+	}
 }
 
-.judges-list a:hover::before {
+.judges-list a {
+	text-decoration: none;
+	font-size: 90%;
+}
+
+.judges-list a:hover {
+	text-decoration: underline;
+	color: inherit;
+}
+
+.judges-list .judge-avatar:hover::before {
 	transform: translate(-4px,-4px);
 }
 
