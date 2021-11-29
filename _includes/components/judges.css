@@ -42,6 +42,13 @@
 	transition: all 150ms ease-in-out;
 }
 
+@supports (aspect-ratio: 1) {
+	.judges-list .judge-avatar::before {
+		height: auto;
+		aspect-ratio: 1;
+	}
+}
+
 .judges-list a {
 	text-decoration: none;
 	font-size: 90%;
