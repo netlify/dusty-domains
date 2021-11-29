@@ -2,8 +2,8 @@
 	margin-top: 2em;
 }
 
-.submit-grid h2,
-.submit-grid p {
+.submit-grid > h2,
+.submit-grid > p {
 	text-align: center;
 }
 
@@ -60,4 +60,41 @@
   margin: 10px auto auto auto;
   overflow: hidden;
   color: darkred;
+}
+
+div.submit-helper {
+	display: flex;
+	flex-direction: row-reverse;
+	justify-content: space-between;
+	gap: 1em;
+	align-items: center;
+	text-align: left;
+}
+
+div.submit-helper p {
+	margin: 0;
+	display: none;
+}
+
+div.submit-helper button:disabled + p {
+	display: block;
+}
+
+div.submit-helper p::before {
+	content: '';
+	margin-right: .5em;
+	width: 12px;
+	height: 12px;
+	display: inline-block;
+	border: var(--ui-border);
+	animation: spin 1500ms infinite linear;
+}
+
+@keyframes spin {
+	0 {
+		transform: rotate(0);
+	}
+	100% {
+		transform: rotate(360deg);
+	}
 }
