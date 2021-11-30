@@ -9,16 +9,16 @@ status = 200
 [functions]
 node_bundler = "zisi"
 
-[[redirects]]
-from = "/thanks/:site/:age"
-to = "/.netlify/builders/thanks"
-status = 200
-force = true
-_generated_by_eleventy_serverless = "thanks"
-
 [[plugins]]
   package = "./netlify/plugins/airtable-feed/index.js"
 
   [plugins.inputs]
     # Directory for the generated JSON data files to reside in
     dataDir = "_data"
+
+[[redirects]]
+from = "/thanks/:site/:age"
+to = "/.netlify/functions/thanks"
+status = 200
+force = true
+_generated_by_eleventy_serverless = "thanks"
