@@ -19,7 +19,7 @@
   },
   "homepage": "https://github.com/netlify/dusty-domains#readme",
   "devDependencies": {
-    "@11ty/eleventy": "^1.0.0-beta.8"
+    "@11ty/eleventy": "1.0.0-beta.8"
   },
   "dependencies": {
     "@netlify/functions": "^0.10.0",
