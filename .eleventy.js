@@ -4,7 +4,7 @@ module.exports = function (eleventyConfig) {
   eleventyConfig.addPassthroughCopy('static');
 
   eleventyConfig.addPlugin(EleventyServerlessBundlerPlugin, {
-    name: 'share',
+    name: 'thanks',
     functionsDir: './netlify/functions/',
     redirects: 'netlify-toml-builders',
   });

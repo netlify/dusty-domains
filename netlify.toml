@@ -3,9 +3,8 @@ functions = "netlify/functions"
 
 [[redirects]]
 from = "/thanks/*"
-to = "/.netlify/functions/share"
+to = "/.netlify/functions/thanks"
 status = 200
-force = true
 
 [functions]
 node_bundler = "esbuild"

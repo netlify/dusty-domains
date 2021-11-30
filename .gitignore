@@ -3,8 +3,8 @@ node_modules
 package-lock.json
 _site
 
-netlify/functions/share/**
-!netlify/functions/share/index.js
+netlify/functions/thanks/**
+!netlify/functions/thanks/index.js
 
 # Local Netlify folder
 .netlify
