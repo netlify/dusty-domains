@@ -1,0 +1,4 @@
+name: airtable-feed
+inputs:
+  - name: dataDir
+    default: data

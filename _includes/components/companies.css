@@ -1,0 +1,48 @@
+.companies-grid {
+	grid-column: narrow;
+	text-align: center;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+
+.companies-grid p {
+	max-width: 500px;
+}
+
+.companies-list {
+	width: 100%;
+	max-width: 400px;
+	margin: 3em auto 0;
+	font-family: 'Courier New', monospace;
+}
+
+.companies-list div {
+	height: 60px;
+	display: grid;
+	grid-template-columns: 1fr auto;
+	grid-gap: 1.5em;
+	align-items: center;
+	border-bottom: 1px dashed var(--color-gray-L800);
+	text-align: left;
+}
+
+.companies-list div:last-of-type {
+	font-size: 120%;
+	font-weight: 600;
+}
+
+.company-logo {
+	height: 30px;
+	display: flex;
+	align-items: center;
+	transition: all 100ms ease-in-out;
+}
+
+.company-logo:hover {
+	transform: scale(1.05);
+}
+
+.company-logo img {
+	height: 100%;
+}

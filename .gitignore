@@ -6,6 +6,7 @@ _site
 netlify/functions/thanks/**
 !netlify/functions/thanks/index.js
 
+_data
 # Local Netlify folder
 .netlify
 .env
