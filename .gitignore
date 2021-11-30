@@ -8,8 +8,8 @@ netlify/functions/thanks/**
 
 _data
 
-netlify/functions/share/**
-!netlify/functions/share/index.js
+netlify/functions/thanks/**
+!netlify/functions/thanks/index.js
 
 # Local Netlify folder
 .netlify
