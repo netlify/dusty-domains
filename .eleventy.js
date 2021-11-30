@@ -6,6 +6,6 @@ module.exports = function (eleventyConfig) {
   eleventyConfig.addPlugin(EleventyServerlessBundlerPlugin, {
     name: 'thanks',
     functionsDir: './netlify/functions/',
-    redirects: 'netlify-toml',
+    redirects: 'netlify-toml-builders',
   });
 };
