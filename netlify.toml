@@ -4,3 +4,10 @@ functions = "netlify/functions"
 [functions]
 node_bundler = "esbuild"
 external_node_modules = [ "chrome-aws-lambda" ]
+
+[[redirects]]
+from = "/thanks/:site/:age"
+to = "/.netlify/functions/thanks"
+status = 200
+force = true
+_generated_by_eleventy_serverless = "thanks"

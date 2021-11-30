@@ -2,8 +2,8 @@
 layout: layout.njk
 bodyClass: thanks
 permalink:
-	build: /thanks/
-	thanks: /thanks/:site/:age
+  build: /thanks/
+  thanks: /thanks/:site/:age
 ---
 
 <!-- Header -->
@@ -13,7 +13,7 @@ permalink:
 		<section class="grid-narrow">
 
 			<!-- Option 1 (domain is 1+ years old) -->
-			<h1 class="thanks1"><span>I just shipped a </span><span class="site-age">{eleventy.serverless.path.age}-year-old</span> <strong>Dusty Domain</strong> <span class="netlify">on {% include "_includes/components/_svg/netlify-logo" %}</span></h1>
+			<h1 class="thanks1"><span>I just shipped a </span><span class="site-age">{{ eleventy.serverless.path.age }}-year-old</span> <strong>Dusty Domain</strong> <span class="netlify">on {% include "_includes/components/_svg/netlify-logo" %}</span></h1>
 
 			<!-- Option 2 (domain is <1 year old) -->
 			{# <h1 class="thanks2"><span>I just bought a domain</span> <span>& shipped the project in</span> <span>the same dang year</span> <small>(please clap)</small></h1> #}
