@@ -20,7 +20,7 @@
 	gap: 1.5em;
 }
 
-@media screen and (min-width: 400px) {
+@media screen and (min-width: 450px) {
 	.judges-list {
 		grid-template-columns: repeat(auto-fit,minmax(160px,1fr));
 		gap: 1.5em 2em;
