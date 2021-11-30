@@ -1,6 +1,12 @@
 [build]
 functions = "netlify/functions"
 
+[[redirects]]
+from = "/thanks/*"
+to = "/.netlify/functions/share"
+status = 200
+force = true
+
 [functions]
 node_bundler = "zisi"
 

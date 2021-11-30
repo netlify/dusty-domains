@@ -7,6 +7,10 @@ netlify/functions/thanks/**
 !netlify/functions/thanks/index.js
 
 _data
+
+netlify/functions/share/**
+!netlify/functions/share/index.js
+
 # Local Netlify folder
 .netlify
 .env
