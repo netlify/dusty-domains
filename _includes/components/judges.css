@@ -12,6 +12,7 @@
 
 .judges-list {
 	width: 100%;
+	max-width: 800px;
 	margin-top: 3em;
 	list-style-type: none;
 	display: grid;
