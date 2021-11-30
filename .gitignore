@@ -2,6 +2,7 @@
 node_modules
 package-lock.json
 _site
+_data
 # Local Netlify folder
 .netlify
 .env
