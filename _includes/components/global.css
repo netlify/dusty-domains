@@ -6,6 +6,11 @@
 	padding: 0;
 }
 
+::selection {
+	background: var(--color-teal-T300);
+	color: black;
+}
+
 /*@media (prefers-reduced-motion: no-preference) {
 	html {
 		scroll-behavior: smooth;
