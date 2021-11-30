@@ -1,6 +1,12 @@
 [build]
-    functions="netlify/functions"
+functions = "netlify/functions"
+
+[[redirects]]
+from = "/thanks/*"
+to = "/.netlify/functions/share"
+status = 200
+force = true
 
 [functions]
-    node_bundler = "esbuild"
-    external_node_modules = ["chrome-aws-lambda"]
+node_bundler = "esbuild"
+external_node_modules = [ "chrome-aws-lambda" ]

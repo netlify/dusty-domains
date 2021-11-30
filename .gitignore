@@ -2,6 +2,10 @@
 node_modules
 package-lock.json
 _site
+
+netlify/functions/share/**
+!netlify/functions/share/index.js
+
 # Local Netlify folder
 .netlify
 .env
