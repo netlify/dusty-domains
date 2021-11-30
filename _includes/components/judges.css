@@ -15,8 +15,15 @@
 	margin-top: 3em;
 	list-style-type: none;
 	display: grid;
-	grid-template-columns: repeat(auto-fit,minmax(150px,1fr));
-	gap: 1em 2em;
+	grid-template-columns: 1fr 1fr;
+	gap: 1.5em;
+}
+
+@media screen and (min-width: 400px) {
+	.judges-list {
+		grid-template-columns: repeat(auto-fit,minmax(160px,1fr));
+		gap: 1.5em 2em;
+	}
 }
 
 .judges-list li {

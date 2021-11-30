@@ -61,7 +61,7 @@ img {
 .pancake,
 .grid {
 	display: grid;
-	grid-template-columns: [full-start] minmax(2rem, 1fr) [standard-start] 0 [narrow-start] minmax(1rem, 67.5rem) [narrow-end] 0 [standard-end] minmax(2rem, 1fr) [full-end];
+	grid-template-columns: [full-start] minmax(1.5rem, 1fr) [standard-start] 0 [narrow-start] minmax(1rem, 67.5rem) [narrow-end] 0 [standard-end] minmax(1.5rem, 1fr) [full-end];
 	position: relative;
 	padding: 0;
 }
