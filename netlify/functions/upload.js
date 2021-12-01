@@ -5,6 +5,7 @@ exports.handler = async (event) => {
   const data = JSON.parse(event.body);
   const AIRTABLE_BASE_ID = process.env.AIRTABLE_BASE_ID;
   const AIRTABLE_API_KEY = process.env.AIRTABLE_API_KEY;
+  const AIRTABLE_API_URL = process.env.AIRTABLE_API_URL;
 
   try {
     // Step 1: upload to Cloudinary
@@ -37,7 +38,12 @@ exports.handler = async (event) => {
     };
 
     // Step 2: upload to Airtable
-    var base = new Airtable({ apiKey: AIRTABLE_API_KEY }).base(
+    Airtable.configure({ 
+      apiKey: AIRTABLE_API_KEY, 
+      endpointUrl:  AIRTABLE_API_URL
+    });
+
+    var base = Airtable.base(
       AIRTABLE_BASE_ID
     );
 
