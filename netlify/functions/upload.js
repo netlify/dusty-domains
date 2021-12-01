@@ -23,11 +23,12 @@ exports.handler = async (event) => {
       },
       function (error, result) {
         console.error(error);
-        throw new Error("Failure in executing the Cloudinary upload.");
+        //throw new Error("Failure in executing the Cloudinary upload.");
       }
     );
 
     const screenshotURL = cloudinaryResp.secure_url;
+    console.log('Screenshot URL:', screenshotURL);
 
     const { ["screenshotBase64"]: remove, ...rest } = data;
 
