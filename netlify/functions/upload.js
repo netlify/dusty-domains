@@ -22,13 +22,13 @@ exports.handler = async (event) => {
         folder: "dusty-domains",
       },
       function (error, result) {
-        console.error(error);
-        //throw new Error("Failure in executing the Cloudinary upload.");
+        if(error){
+          console.error(error);
+        } 
       }
     );
 
     const screenshotURL = cloudinaryResp.secure_url;
-    console.log('Screenshot URL:', screenshotURL);
 
     const { ["screenshotBase64"]: remove, ...rest } = data;
 
@@ -37,6 +37,7 @@ exports.handler = async (event) => {
       screenshot: screenshotURL,
     };
 
+    console.log(submissionData);
     // Step 2: upload to Airtable
 
     var base = new Airtable({ endpointUrl: AIRTABLE_API_URL, apiKey: AIRTABLE_API_KEY }).base(
@@ -52,6 +53,13 @@ exports.handler = async (event) => {
         if (err) {
           console.error(err);
           throw new Error("Failure in executing the Airbase submission.");
+        }
+
+        if(records) {
+          console.log("Submission was successful")
+          records.forEach(function (record) {
+            console.log(record.getId());
+          });
         }
       }
     );
