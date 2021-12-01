@@ -37,15 +37,17 @@ exports.handler = async (event) => {
     };
 
     // Step 2: upload to Airtable
-    console.log("Before Airtable initialization");
     var base = new Airtable({ apiKey: AIRTABLE_API_KEY }).base(
       AIRTABLE_BASE_ID
     );
-    console.log("After Airtable initialization");
 
-    base("Submissions").create(submissionData,
+    base("Submissions").create(
+      [
+        {
+          fields: submissionData,
+        },
+      ],
       function (err, records) {
-        console.log("Entering the callback for airtable");
         if (err) {
           console.error(err);
           throw new Error("Failure in executing the Airbase submission.");
@@ -59,8 +61,6 @@ exports.handler = async (event) => {
         }
       }
     );
-
-    console.log("After Airtable execution");
 
     return {
       statusCode: 200,
