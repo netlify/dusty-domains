@@ -27,6 +27,7 @@ submissionForm.onsubmit = async (e) => {
     });
 
     screenshotBase64Data = await screenshotRes.text();
+    console.log('Inside of the initial try/catch: ', screenshotBase64Data);
   } catch (e) {
     document.querySelector('.form-error').textContent =
       "This site doesn't seem to be deployed on Netlify so we can't accept your submission 😢";
@@ -35,7 +36,9 @@ submissionForm.onsubmit = async (e) => {
     formButton.disabled = false;
   }
 
+  console.log('Check the screenshot data before the condition: ', screenshotBase64Data);
   if (screenshotBase64Data) {
+    console.log('Check the screenshot data inside the condition: ', screenshotBase64Data);
     try {
       const uploadRes = await fetch('/.netlify/functions/upload', {
         method: 'POST',
