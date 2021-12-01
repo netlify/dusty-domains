@@ -2,24 +2,30 @@
 functions = "netlify/functions"
 
 [[redirects]]
+from = "/thanks/:site/:age"
+to = "/.netlify/builders/thanks"
+status = 200
+force = true
+_generated_by_eleventy_serverless = "thanks"
+
+[[redirects]]
+from = "/thanks/:site"
+to = "/.netlify/builders/thanks"
+status = 200
+force = true
+_generated_by_eleventy_serverless = "thanks"
+
+[[redirects]]
 from = "/thanks/*"
 to = "/.netlify/functions/thanks"
 status = 200
 
 [functions]
-    node_bundler = "zisi"
-    external_node_modules = ["chrome-aws-lambda"]
+node_bundler = "zisi"
+external_node_modules = [ "chrome-aws-lambda" ]
 
 [[plugins]]
-  package = "./netlify/plugins/airtable-feed/index.js"
+package = "./netlify/plugins/airtable-feed/index.js"
 
   [plugins.inputs]
-    # Directory for the generated JSON data files to reside in
-    dataDir = "_data"
-
-[[redirects]]
-from = "/thanks/:site/:age"
-to = "/.netlify/functions/thanks"
-status = 200
-force = true
-_generated_by_eleventy_serverless = "thanks"
+  dataDir = "_data"

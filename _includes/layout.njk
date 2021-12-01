@@ -15,8 +15,19 @@
 		<meta content="Ship a site to Netlify and turn that dusty domain you’ve been squatting on into real money for charity." name="twitter:description" property="og:description">
 		<meta content="https://dusty.domains" property="og:url">
 		<meta content="https://dusty.domains" property="twitter:url">
-		<meta content="https://dusty.domains/static/og.png" property="og:image">
-		<meta content="https://dusty.domains/static/og.png" name="twitter:image">
+		{% if eleventy.serverless.path.age >= 1 %}
+			<meta content="https://res.cloudinary.com/netlify/image/upload/f_auto,q_auto/w_800,c_fit,co_rgb:ffffff,g_center,l_text:Pacaembu-Regular.otf_85_center:{{ eleventy.serverless.path.age }}-year-old,y_-92/g_south_west,x_70,y_60,l_text:Mulish-Regular.ttf_40:{{ eleventy.serverless.path.site }}/g_south_east,co_rgb:666666,x_70,y_70,l_text:Mulish-Bold.ttf_30:{{ eleventy.serverless.path.age }}%20YEARS%20DUSTY/dusty-domains/x-years-old.jpg" property="og:image">
+			<meta content="https://res.cloudinary.com/netlify/image/upload/f_auto,q_auto/w_800,c_fit,co_rgb:ffffff,g_center,l_text:Pacaembu-Regular.otf_85_center:{{ eleventy.serverless.path.age }}-year-old,y_-92/g_south_west,x_70,y_60,l_text:Mulish-Regular.ttf_40:{{ eleventy.serverless.path.site }}/g_south_east,co_rgb:666666,x_70,y_70,l_text:Mulish-Bold.ttf_30:{{ eleventy.serverless.path.age }}%20YEARS%20DUSTY/dusty-domains/x-years-old.jpg" name="twitter:image">
+		{% elif eleventy.serverless.path.age < 1 %}
+			<meta content="https://res.cloudinary.com/netlify/image/upload/f_auto,q_auto/g_south_west,x_70,y_60,l_text:Mulish-Regular.ttf_40:{{ eleventy.serverless.path.site }}/dusty-domains/same-year.jpg" property="og:image">
+			<meta content="https://res.cloudinary.com/netlify/image/upload/f_auto,q_auto/g_south_west,x_70,y_60,l_text:Mulish-Regular.ttf_40:{{ eleventy.serverless.path.site }}/dusty-domains/same-year.jpg" name="twitter:image">
+		{% elif eleventy.serverless.path.site %}
+			<meta content="https://res.cloudinary.com/netlify/image/upload/f_auto,q_auto/dusty-domains/default-card.jpg" property="og:image">
+			<meta content="https://res.cloudinary.com/netlify/image/upload/f_auto,q_auto/dusty-domains/default-card.jpg" name="twitter:image">
+		{% else %}
+			<meta content="https://res.cloudinary.com/netlify/image/upload/f_auto,q_auto/dusty-domains/og.jpg" property="og:image">
+			<meta content="https://res.cloudinary.com/netlify/image/upload/f_auto,q_auto/dusty-domains/og.jpg" name="twitter:image">
+		{% endif %}
 		<style>
 		{% include "components/fonts.css" %}
 		{% include "components/variables.css" %}

@@ -8,4 +8,6 @@ module.exports = function (eleventyConfig) {
     functionsDir: './netlify/functions/',
     redirects: 'netlify-toml-builders',
   });
+
+  eleventyConfig.dataFilterSelectors.add('eleventy.serverless.path');
 };

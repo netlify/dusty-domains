@@ -3,8 +3,23 @@ layout: layout.njk
 bodyClass: thanks
 permalink:
   build: /thanks/
-  thanks: /thanks/:site/:age
+  thanks:
+    - /thanks/:site
+    - /thanks/:site/:age
 ---
+
+{% block og %}
+	{% if eleventy.serverless.path.age >= 1 %}
+		<meta content="https://res.cloudinary.com/netlify/image/upload/f_auto,q_auto/w_800,c_fit,co_rgb:ffffff,g_center,l_text:Pacaembu-Regular.otf_85_center:{{ eleventy.serverless.path.age }}-year-old,y_-92/g_south_west,x_70,y_60,l_text:Mulish-Regular.ttf_40:{{ eleventy.serverless.path.site }}/g_south_east,co_rgb:666666,x_70,y_70,l_text:Mulish-Bold.ttf_30:{{ eleventy.serverless.path.age }}%20YEARS%20DUSTY/dusty-domains/x-years-old.jpg" property="og:image">
+		<meta content="https://res.cloudinary.com/netlify/image/upload/f_auto,q_auto/w_800,c_fit,co_rgb:ffffff,g_center,l_text:Pacaembu-Regular.otf_85_center:{{ eleventy.serverless.path.age }}-year-old,y_-92/g_south_west,x_70,y_60,l_text:Mulish-Regular.ttf_40:{{ eleventy.serverless.path.site }}/g_south_east,co_rgb:666666,x_70,y_70,l_text:Mulish-Bold.ttf_30:{{ eleventy.serverless.path.age }}%20YEARS%20DUSTY/dusty-domains/x-years-old.jpg" name="twitter:image">
+	{% elif eleventy.serverless.path.age < 1 %}
+		<meta content="https://res.cloudinary.com/netlify/image/upload/f_auto,q_auto/g_south_west,x_70,y_60,l_text:Mulish-Regular.ttf_40:{{ eleventy.serverless.path.site }}/dusty-domains/same-year.jpg" property="og:image">
+		<meta content="https://res.cloudinary.com/netlify/image/upload/f_auto,q_auto/g_south_west,x_70,y_60,l_text:Mulish-Regular.ttf_40:{{ eleventy.serverless.path.site }}/dusty-domains/same-year.jpg" name="twitter:image">
+	{% else %}
+		<meta content="https://res.cloudinary.com/netlify/image/upload/f_auto,q_auto/dusty-domains/default-card.jpg" property="og:image">
+		<meta content="https://res.cloudinary.com/netlify/image/upload/f_auto,q_auto/dusty-domains/default-card.jpg" name="twitter:image">
+	{% endif %}
+{% endblock %}
 
 <!-- Header -->
 <header class="header-main dusty dusty-dark">
@@ -12,37 +27,42 @@ permalink:
 		{% include "_includes/components/nav-main.njk" %}
 		<section class="grid-narrow">
 
-			<!-- Option 1 (domain is 1+ years old) -->
-			<h1 class="thanks1"><span>I just shipped a </span><span class="site-age">{{ eleventy.serverless.path.age }}-year-old</span> <strong>Dusty Domain</strong> <span class="netlify">on {% include "_includes/components/_svg/netlify-logo" %}</span></h1>
+			{% if eleventy.serverless.path.age >= 1 %}
+				
+				<h1 class="thanks1"><span>I just shipped a </span><span class="site-age">{{ eleventy.serverless.path.age }}-year-old</span> <strong>Dusty Domain</strong> <span class="netlify">on {% include "_includes/components/_svg/netlify-logo" %}</span></h1>
+			{% elif eleventy.serverless.path.age < 1 %}
+				<h1 class="thanks2"><span>I just bought a domain</span> <span>& shipped the project in</span> <span>the same dang year</span> <small>(please clap)</small></h1>
+			{% else %}
+				<h1 class="thanks3"><span>I just shipped a </span><strong>Dusty Domain</strong> <span class="netlify">on {% include "_includes/components/_svg/netlify-logo" %}</span></h1>
+			{% endif %}
 
-			<!-- Option 2 (domain is <1 year old) -->
-			{# <h1 class="thanks2"><span>I just bought a domain</span> <span>& shipped the project in</span> <span>the same dang year</span> <small>(please clap)</small></h1> #}
-
-			<!-- Option 3 (no custom domain) -->
-			{# <h1 class="thanks3"><span>I just shipped a </span><strong>Dusty Domain</strong> <span class="netlify">on {% include "_includes/components/_svg/netlify-logo" %}</span></h1> #}
-
-			<p><span>Check out my site that contributed $150 to charity. 👇</span></p>
+			{% if eleventy.serverless.path.site %}
+				<p><span>Check out my site that contributed $150 to charity. 👇</span></p>
+			{% endif %}
 		</section>
 	</div>
 </header>
 
+{% if eleventy.serverless.path.site %}
 <!-- Featured sites -->
 <div class="grid" id="featured">
 	<div class="grid-narrow featured-grid">
 		<ul class="sites-list" id="featured-list">
 			<li class="sites-item">
-				<a href="https://hawk.dance/">
-					<span class="site-title">hawk.dance
-						<span class="site-date">3 years dusty</span>
+				<a href="https://{{ eleventy.serverless.path.site }}">
+					<span class="site-title">{{ eleventy.serverless.path.site }}
+						<span class="site-date">{{ eleventy.serverless.path.age }} years dusty</span>
 					</span>
 					<figure>
-						<img src="/static/hawk-dance.jpg" alt="screenshot of website" />
+						<img src="DUSTY_DOMAINS_SCREENSHOT_URL" alt="screenshot of website" />
 					</figure>
 				</a>
 			</li>
 		</ul>
 	</div>
 </div>
+
+{% endif %}
 
 <main>
 	<section class="pancake">
