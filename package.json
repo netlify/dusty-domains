@@ -1,33 +1,33 @@
 {
-    "name": "dusty-domains",
-    "version": "1.0.0",
-    "description": "Dusty Domains event - December 2021",
-    "main": "index.js",
-    "scripts": {
-        "test": "echo \"Error: no test specified\" && exit 1",
-        "start": "npx @11ty/eleventy --serve"
-    },
-    "repository": {
-        "type": "git",
-        "url": "git+https://github.com/netlify/dusty-domains.git"
-    },
-    "keywords": [],
-    "author": "",
-    "license": "ISC",
-    "bugs": {
-        "url": "https://github.com/netlify/dusty-domains/issues"
-    },
-    "homepage": "https://github.com/netlify/dusty-domains#readme",
-    "devDependencies": {
-        "@11ty/eleventy": "^0.12.1"
-    },
-    "dependencies": {
-        "airtable": "^0.11.1",
-        "chrome-aws-lambda": "^10.1.0",
-        "cloudinary": "^1.23.0",
-        "dotenv": "^10.0.0",
-        "focus-visible": "^5.2.0",
-        "node-fetch": "^2.6.0",
-        "puppeteer-core": "^10.2.0"
-    }
+  "name": "dusty-domains",
+  "version": "1.0.0",
+  "description": "Dusty Domains event - December 2021",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "npx @11ty/eleventy --serve"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/netlify/dusty-domains.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/netlify/dusty-domains/issues"
+  },
+  "homepage": "https://github.com/netlify/dusty-domains#readme",
+  "devDependencies": {
+    "@11ty/eleventy": "1.0.0-beta.8"
+  },
+  "dependencies": {
+    "@netlify/functions": "^0.10.0",
+    "airtable": "^0.11.1",
+    "chrome-aws-lambda": "^10.1.0",
+    "cloudinary": "^1.23.0",
+    "dotenv": "^10.0.0",
+    "focus-visible": "^5.2.0",
+    "node-fetch": "^2.6.0"
+  }
 }

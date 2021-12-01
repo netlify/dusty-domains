@@ -2,7 +2,15 @@
 node_modules
 package-lock.json
 _site
+
+netlify/functions/thanks/**
+!netlify/functions/thanks/index.js
+
 _data
+
+netlify/functions/thanks/**
+!netlify/functions/thanks/index.js
+
 # Local Netlify folder
 .netlify
 .env
