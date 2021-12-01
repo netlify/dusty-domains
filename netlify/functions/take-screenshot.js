@@ -24,7 +24,7 @@ const takeScreenshot = async (url) => {
 };
 
 exports.handler = async (event) => {
-  const submissionURL = JSON.parse(event.body);
+  const submissionURL = event.body;
   const submissionHeaders = await fetch(submissionURL);
   const isNetlifySite =
     new Map(submissionHeaders.headers).get("server") === "Netlify"
@@ -36,7 +36,10 @@ exports.handler = async (event) => {
 
     return {
       statusCode: 200,
-      body: JSON.stringify(screenshot),
+      headers: {
+        'Content-Type': 'text/plain'
+      },
+      body: screenshot,
     };
   } else {
     return {

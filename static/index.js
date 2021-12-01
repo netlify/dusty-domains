@@ -21,12 +21,12 @@ submissionForm.onsubmit = async (e) => {
     const screenshotRes = await fetch('/.netlify/functions/take-screenshot', {
       method: 'POST',
       headers: {
-        'Content-Type': 'application/json',
+        'Content-Type': 'text/plain',
       },
-      body: JSON.stringify(submissionDetails.URL),
+      body: submissionDetails.URL,
     });
 
-    screenshotBase64Data = await screenshotRes.json();
+    screenshotBase64Data = await screenshotRes.text();
   } catch (e) {
     document.querySelector('.form-error').textContent =
       "This site doesn't seem to be deployed on Netlify so we can't accept your submission 😢";
