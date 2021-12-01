@@ -1,0 +1,42 @@
+.charities-grid {
+	text-align: center;
+}
+
+.charities-list {
+	width: 100%;
+	max-width: 800px;
+	margin: 2em auto 0;
+	list-style: none;
+	line-height: 1.2;
+	display: grid;
+	grid-template-columns: 1fr 1fr;
+	gap: 1.5em;
+}
+
+@media screen and (min-width: 600px) {
+	.charities-list {
+		grid-template-columns: repeat(auto-fit,minmax(100px,1fr));
+		gap: 1.5em 2em;
+	}
+}
+
+.charities-list img {
+	width: 100%;
+	border-radius: 3px;
+	border: 1px solid var(--color-gray-L400);
+	transition: transform 100ms ease-in-out;
+}
+
+.charities-list a {
+	text-decoration: none;
+	font-size: 90%;
+}
+
+.charities-list a:hover {
+	text-decoration: underline;
+	color: inherit;
+}
+
+.charities-list a:hover img {
+	transform: scale(1.05) translateY(-5px);
+}
