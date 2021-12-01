@@ -5,7 +5,6 @@ exports.handler = async (event) => {
   const data = JSON.parse(event.body);
   const AIRTABLE_BASE_ID = process.env.AIRTABLE_BASE_ID;
   const AIRTABLE_API_KEY = process.env.AIRTABLE_API_KEY;
-  const AIRTABLE_API_URL = process.env.AIRTABLE_API_URL;
 
   try {
     // Step 1: upload to Cloudinary
@@ -37,10 +36,8 @@ exports.handler = async (event) => {
       screenshot: screenshotURL,
     };
 
-    console.log(submissionData);
     // Step 2: upload to Airtable
-
-    var base = new Airtable({ endpointUrl: AIRTABLE_API_URL, apiKey: AIRTABLE_API_KEY }).base(
+    var base = new Airtable({ apiKey: AIRTABLE_API_KEY }).base(
       AIRTABLE_BASE_ID
     );
     base("Submissions").create(
@@ -50,6 +47,7 @@ exports.handler = async (event) => {
         },
       ],
       function (err, records) {
+        console.log("Entering the callback for airtable");
         if (err) {
           console.error(err);
           throw new Error("Failure in executing the Airbase submission.");
