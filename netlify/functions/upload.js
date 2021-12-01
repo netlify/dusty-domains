@@ -40,12 +40,7 @@ exports.handler = async (event) => {
     var base = new Airtable({ apiKey: AIRTABLE_API_KEY }).base(
       AIRTABLE_BASE_ID
     );
-    base("Submissions").create(
-      [
-        {
-          fields: submissionData,
-        },
-      ],
+    base("Submissions").create(submissionData,
       function (err, records) {
         console.log("Entering the callback for airtable");
         if (err) {
