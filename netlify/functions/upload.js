@@ -23,6 +23,7 @@ exports.handler = async (event) => {
       },
       function (error, result) {
         console.error(error);
+        throw new Error("Failure in executing the Cloudinary upload.");
       }
     );
 
@@ -49,7 +50,7 @@ exports.handler = async (event) => {
       function (err, records) {
         if (err) {
           console.error(err);
-          return;
+          throw new Error("Failure in executing the Airbase submission.");
         }
       }
     );
