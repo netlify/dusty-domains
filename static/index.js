@@ -35,33 +35,37 @@ submissionForm.onsubmit = async (e) => {
     formButton.disabled = false;
   }
 
-  if (screenshotBase64Data) {
-    try {
-      const uploadRes = await fetch('/.netlify/functions/upload', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify({
-          ...submissionDetails,
-          screenshotBase64: screenshotBase64Data,
-        }),
-      });
+  // if we don't get a screenshot, log an error but don't fail
+  if (!screenshotBase64Data) {
+    screenshotBase64Data = false;
+    console.error('unable to generate a screenshot');
+  }
 
-      if (uploadRes.ok) {
-        const url = new URL(submissionDetails.URL);
-        const age = 2021 - submissionDetails['Years unused'];
+  try {
+    const uploadRes = await fetch('/.netlify/functions/upload', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify({
+        ...submissionDetails,
+        screenshotBase64: screenshotBase64Data,
+      }),
+    });
 
-        window.location = window.location.href + `thanks/${url.host}/${age}`;
-      } else {
-        throw new Error('Something went wrong while uploading your submission');
-      }
-    } catch (e) {
-      document.querySelector('.form-error').textContent =
-        'Looks like something went a little bit haywire 🤔. Maybe try again!';
-      console.error(e);
-      formButton.disabled = false;
+    if (uploadRes.ok) {
+      const url = new URL(submissionDetails.URL);
+      const age = 2021 - submissionDetails['Years unused'];
+
+      window.location = window.location.href + `thanks/${url.host}/${age}`;
+    } else {
+      throw new Error('Something went wrong while uploading your submission');
     }
+  } catch (e) {
+    document.querySelector('.form-error').textContent =
+      'Looks like something went a little bit haywire 🤔. Maybe try again!';
+    console.error(e);
+    formButton.disabled = false;
   }
 };
 
