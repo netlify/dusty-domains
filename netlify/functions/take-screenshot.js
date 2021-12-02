@@ -29,25 +29,12 @@ exports.handler = async (event) => {
   const isNetlifySite = new Map(submissionHeaders.headers).get("server") === "Netlify";
 
   if (isNetlifySite) {
-    try {
-      const screenshot = await takeScreenshot(submissionURL);
-      return {
-        statusCode: 200,
-        headers: {
-          'Content-Type': 'text/plain'
-        },
-        body: screenshot,
-      };
-    } catch (e) {
-      console.error("We failed to upload the image of the site");
-      console.error(e);
+    const screenshot = await takeScreenshot(submissionURL);
 
-      return {
-        statusCode: 500,
-        body: "Failed to upload screenshot"
-      }
-    }
-    
+    return {
+      statusCode: 200,
+      body: screenshot,
+    };
   } else {
     return {
       statusCode: 418,
