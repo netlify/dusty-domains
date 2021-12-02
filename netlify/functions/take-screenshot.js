@@ -26,10 +26,7 @@ const takeScreenshot = async (url) => {
 exports.handler = async (event) => {
   const submissionURL = event.body;
   const submissionHeaders = await fetch(submissionURL);
-  const isNetlifySite =
-    new Map(submissionHeaders.headers).get("server") === "Netlify"
-      ? true
-      : false;
+  const isNetlifySite = new Map(submissionHeaders.headers).get("server") === "Netlify";
 
   if (isNetlifySite) {
     try {
