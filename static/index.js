@@ -15,27 +15,27 @@ submissionForm.onsubmit = async (e) => {
     'Years unused': parseInt(formData.get('site-date')),
   };
 
-  async function getScreenshotinBytes() {
-    try {
-      const screenshotRes = await fetch('/.netlify/functions/take-screenshot', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'text/plain',
-        },
-        body: submissionDetails.URL,
-      });
-  
-      return await screenshotRes.text();
-    } catch (e) {
-      document.querySelector('.form-error').textContent =
-        "This site doesn't seem to be deployed on Netlify so we can't accept your submission 😢";
-  
-      console.error(e);
-      formButton.disabled = false;
-    }
+  let screenshotBase64Data;
+
+  try {
+    const screenshotRes = await fetch('/.netlify/functions/take-screenshot', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'text/plain',
+      },
+      body: submissionDetails.URL,
+    });
+
+    screenshotBase64Data = await screenshotRes.text();
+  } catch (e) {
+    document.querySelector('.form-error').textContent =
+      "This site doesn't seem to be deployed on Netlify so we can't accept your submission 😢";
+
+    console.error(e);
+    formButton.disabled = false;
   }
 
-  getScreenshotinBytes().then(async screenshotBase64Data => {
+  if (screenshotBase64Data) {
     try {
       const uploadRes = await fetch('/.netlify/functions/upload', {
         method: 'POST',
@@ -66,7 +66,7 @@ submissionForm.onsubmit = async (e) => {
       console.error(e);
       formButton.disabled = false;
     }
-  });
+  }
 };
 
 /* height for showcase items */
