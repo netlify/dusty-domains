@@ -43,7 +43,7 @@
 	border-top: 1px dotted var(--color-gray-L400);
 	text-decoration: none;
 	font-family: var(--font-secondary);
-	background-color: var(--color-gray-L200);
+	background-color: #f7f7f7;
 }
 
 .companies-list div .learn-more:hover {
@@ -55,6 +55,11 @@
 	position: absolute;
 	left: .5em;
 	top: .6em;
+}
+
+.companies-list div .learn-more.video::before {
+	content: '🎬';
+	top: .5em;
 }
 
 .companies-list div:last-of-type {
