@@ -48,10 +48,6 @@ submissionForm.onsubmit = async (e) => {
         }),
       });
 
-      console.log('Upload Promise', uploadRes);
-      const uploadText = await uploadRes.text();
-      console.log(uploadText)
-
       if (uploadRes.ok) {
         const url = new URL(submissionDetails.URL);
         const age = 2021 - submissionDetails['Years unused'];
