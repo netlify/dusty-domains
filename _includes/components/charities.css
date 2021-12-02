@@ -28,6 +28,7 @@
 }
 
 .charities-list a {
+	display: block;
 	text-decoration: none;
 	font-size: 90%;
 }

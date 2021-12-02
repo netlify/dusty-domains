@@ -12,19 +12,49 @@
 
 .companies-list {
 	width: 100%;
-	max-width: 400px;
+	max-width: 450px;
 	margin: 3em auto 0;
 	font-family: 'Courier New', monospace;
 }
 
 .companies-list div {
-	height: 60px;
 	display: grid;
 	grid-template-columns: 1fr auto;
-	grid-gap: 1.5em;
+	grid-template-rows: auto auto;
+	grid-gap: 0 1.5em;
 	align-items: center;
 	border-bottom: 1px dashed var(--color-gray-L800);
 	text-align: left;
+}
+
+.companies-list dt,
+.companies-list dd {
+	height: 60px;
+	display: flex;
+	align-items: center;
+}
+
+.companies-list div .learn-more {
+	grid-column: 1 / -1;
+	position: relative;
+	padding: .5em 1em .5em 2em;
+	font-size: 90%;
+	line-height: 1.3;
+	border-top: 1px dotted var(--color-gray-L400);
+	text-decoration: none;
+	font-family: var(--font-secondary);
+	background-color: var(--color-gray-L200);
+}
+
+.companies-list div .learn-more:hover {
+	text-decoration: underline;
+	color: inherit;
+}
+.companies-list div .learn-more::before {
+	content: '🔗';
+	position: absolute;
+	left: .5em;
+	top: .6em;
 }
 
 .companies-list div:last-of-type {
