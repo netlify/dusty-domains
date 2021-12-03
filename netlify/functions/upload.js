@@ -47,7 +47,7 @@ exports.handler = async (event) => {
           Email: data['Email'],
           URL: data['URL'],
           'Years unused': data['Years unused'],
-          screenshot: screenshotURL,
+          screenshot: screenshotUrl,
         },
       },
     ]);

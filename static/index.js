@@ -15,32 +15,6 @@ submissionForm.onsubmit = async (e) => {
     'Years unused': parseInt(formData.get('site-date')),
   };
 
-  // let screenshotBase64Data;
-
-  // try {
-  //   const screenshotRes = await fetch('/.netlify/functions/take-screenshot', {
-  //     method: 'POST',
-  //     headers: {
-  //       'Content-Type': 'application/json',
-  //     },
-  //     body: JSON.stringify(submissionDetails.URL),
-  //   });
-
-  //   screenshotBase64Data = await screenshotRes.json();
-  // } catch (e) {
-  //   document.querySelector('.form-error').textContent =
-  //     "This site doesn't seem to be deployed on Netlify so we can't accept your submission 😢";
-
-  //   console.error(e);
-  //   formButton.disabled = false;
-  // }
-
-  // // if we don't get a screenshot, log an error but don't fail
-  // if (!screenshotBase64Data) {
-  //   screenshotBase64Data = false;
-  //   console.error('unable to generate a screenshot');
-  // }
-
   try {
     const uploadRes = await fetch('/.netlify/functions/upload', {
       method: 'POST',
@@ -49,7 +23,6 @@ submissionForm.onsubmit = async (e) => {
       },
       body: JSON.stringify({
         ...submissionDetails,
-        // screenshotBase64: screenshotBase64Data,
       }),
     });
 
