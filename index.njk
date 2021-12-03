@@ -263,7 +263,7 @@ bodyClass: landing
 				<!-- LOOK! Data pulled from Airtable via the build plugin  -->
 				{% for site in submissions %}
 				<li class="sites-item">
-					<a href="#">
+					<a href={{ site.fields.URL}}>
 						<span class="site-title">{{ site.fields.URL}}
 							<span class="site-date">{{ site.fields["Years unused"] }}</span>
 						</span>
