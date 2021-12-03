@@ -1,4 +1,4 @@
-h1, h2, h3 {
+h1, h2, h3, h4 {
 	font-family: var(--font-headline);
 	font-weight: 680;
 }
@@ -16,6 +16,11 @@ h2 {
 h3 {
 	margin-top: 1.2em;
 	font-size:  1.8em;
+}
+
+h4 {
+	margin-top: 1.2em;
+	font-size: 1.2em;
 }
 
 @media screen and (max-width: 400px) {
