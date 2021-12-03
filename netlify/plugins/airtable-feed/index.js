@@ -9,7 +9,23 @@ var dataDir;
 const fetchSubmissions = async() => {
     const response = await fetch(`https://api.airtable.com/v0/${AIRTABLE_BASE_ID}/Submissions?maxRecords=10000&view=Approved&api_key=${AIRTABLE_API_KEY}`);
     const data = await response.json();
-    return data.records;
+    return data.records.map(record=>{
+        record.fields.linktext=new URL(record.fields.URL).hostname;
+        const age = 2021-record.fields['Years unused'];
+        if (age < 1) {
+            record.fields.age = 'fresh';
+        }
+        else if (age == 1) {
+            record.fields.age = '1 year dusty';
+        }
+        else if (age > 1) {
+            record.fields.age = `${age} years dusty`;
+        }
+        else {
+            record.fields.age = '';
+        }
+        return record
+    });
 }
 
 

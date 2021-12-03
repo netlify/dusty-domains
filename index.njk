@@ -264,8 +264,8 @@ bodyClass: landing
 				{% for site in submissions %}
 				<li class="sites-item">
 					<a href={{ site.fields.URL}}>
-						<span class="site-title">{{ site.fields.URL}}
-							<span class="site-date">{{ site.fields["Years unused"] }}</span>
+						<span class="site-title">{{ site.fields.linktext }}
+							<span class="site-date">{{ site.fields.age }}</span>
 						</span>
 						<figure>
 							<img src="{{ site.fields.screenshot}}" alt="" />
