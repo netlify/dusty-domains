@@ -15,53 +15,59 @@ submissionForm.onsubmit = async (e) => {
     'Years unused': parseInt(formData.get('site-date')),
   };
 
-  let screenshotBase64Data;
+  // let screenshotBase64Data;
+
+  // try {
+  //   const screenshotRes = await fetch('/.netlify/functions/take-screenshot', {
+  //     method: 'POST',
+  //     headers: {
+  //       'Content-Type': 'application/json',
+  //     },
+  //     body: JSON.stringify(submissionDetails.URL),
+  //   });
+
+  //   screenshotBase64Data = await screenshotRes.json();
+  // } catch (e) {
+  //   document.querySelector('.form-error').textContent =
+  //     "This site doesn't seem to be deployed on Netlify so we can't accept your submission 😢";
+
+  //   console.error(e);
+  //   formButton.disabled = false;
+  // }
+
+  // // if we don't get a screenshot, log an error but don't fail
+  // if (!screenshotBase64Data) {
+  //   screenshotBase64Data = false;
+  //   console.error('unable to generate a screenshot');
+  // }
 
   try {
-    const screenshotRes = await fetch('/.netlify/functions/take-screenshot', {
+    const uploadRes = await fetch('/.netlify/functions/upload', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
       },
-      body: JSON.stringify(submissionDetails.URL),
+      body: JSON.stringify({
+        ...submissionDetails,
+        // screenshotBase64: screenshotBase64Data,
+      }),
     });
 
-    screenshotBase64Data = await screenshotRes.json();
+    if (uploadRes.ok) {
+      const { redirect } = await uploadRes.json();
+
+      const nextURL = new URL(window.location.href);
+      nextURL.pathname = redirect;
+
+      window.location = nextURL;
+    } else {
+      throw new Error('Something went wrong while uploading your submission');
+    }
   } catch (e) {
     document.querySelector('.form-error').textContent =
-      "This site doesn't seem to be deployed on Netlify so we can't accept your submission 😢";
-
+      'Looks like something went a little bit haywire 🤔. Maybe try again!';
     console.error(e);
     formButton.disabled = false;
-  }
-
-  if (screenshotBase64Data) {
-    try {
-      const uploadRes = await fetch('/.netlify/functions/upload', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify({
-          ...submissionDetails,
-          screenshotBase64: screenshotBase64Data,
-        }),
-      });
-
-      if (uploadRes.ok) {
-        const url = new URL(submissionDetails.URL);
-        const age = 2021 - submissionDetails['Years unused'];
-
-        window.location = window.location.href + `thanks/${url.host}/${age}`;
-      } else {
-        throw new Error('Something went wrong while uploading your submission');
-      }
-    } catch (e) {
-      document.querySelector('.form-error').textContent =
-        'Looks like something went a little bit haywire 🤔. Maybe try again!';
-      console.error(e);
-      formButton.disabled = false;
-    }
   }
 };
 
