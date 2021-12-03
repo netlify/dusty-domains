@@ -17,20 +17,25 @@ exports.handler = async (event) => {
       api_secret: process.env.CLOUDINARY_API_SECRET,
     });
 
-    const screenshotResp = await cloudinary.uploader.explicit(data.URL, {
-      transformation: [
-        {
-          gravity: 'north',
-          width: 1600,
-          height: 900,
-          crop: 'fill',
-        },
-      ],
-      sign_url: true,
-      type: 'url2png',
-      async: true,
-      folder: 'dusty-domains',
-    });
+    const url = new URL(data.URL);
+
+    const screenshotResp = await cloudinary.uploader.explicit(
+      `https://${url.hostname}`,
+      {
+        transformation: [
+          {
+            gravity: 'north',
+            width: 1600,
+            height: 900,
+            crop: 'fill',
+          },
+        ],
+        sign_url: true,
+        type: 'url2png',
+        async: true,
+        folder: 'dusty-domains',
+      },
+    );
 
     const screenshotUrl = `https://res.cloudinary.com/netlify/image/url2png/q_auto,f_auto,w_1600,h_900,c_fill,g_north/${screenshotResp.public_id}`;
 
