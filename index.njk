@@ -260,27 +260,6 @@ bodyClass: landing
 				<span>Submit your site and we’ll showcase it here.</span>
 			</p>
 			<ul class="sites-list" id="showcase-list">
-				<li class="sites-item">
-					<a href="#" class="disabled">
-						<span class="site-title">your cool site here
-							<span class="site-date">2 years dusty</span>
-						</span>
-						<figure>
-							<img src="/static/nestflix.png" alt="" />
-						</figure>
-					</a>
-				</li>
-				<li class="sites-item">
-					<a href="#" class="disabled">
-						<span class="site-title">your great domain here
-							<span class="site-date">3 years dusty</span>
-						</span>
-						<figure>
-							<img src="/static/nestflix.png" alt="" />
-						</figure>
-					</a>
-				</li>
-
 				<!-- LOOK! Data pulled from Airtable via the build plugin  -->
 				{% for site in submissions %}
 				<li class="sites-item">
@@ -294,8 +273,6 @@ bodyClass: landing
 					</a>
 				</li>
 				{% endfor %}
-
-
 			</ul>
 		</div>
 	</section>
