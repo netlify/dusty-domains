@@ -51,7 +51,15 @@ permalink:
 			<li class="sites-item">
 				<a href="https://{{ eleventy.serverless.path.site }}">
 					<span class="site-title">{{ eleventy.serverless.path.site }}
-						<span class="site-date">{{ eleventy.serverless.path.age }} years dusty</span>
+						{% if eleventy.serverless.path.age > 1 %}
+							<span class="site-date">{{ eleventy.serverless.path.age }} years dusty</span>
+						{% elif eleventy.serverless.path.age == 1 %}
+							<span class="site-date">{{ eleventy.serverless.path.age }} year dusty</span>
+						{% elif eleventy.serverless.path.age < 1 %}
+							<span class="site-date">fresh</span>
+						{% else %}
+							<span class="site-date"></span>
+						{% endif %}
 					</span>
 					<figure>
 						<img src="DUSTY_DOMAINS_SCREENSHOT_URL" alt="screenshot of website" />
