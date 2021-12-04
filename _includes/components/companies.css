@@ -42,6 +42,10 @@
 	font-weight: 600;
 }
 
+.companies-list div:last-of-type:nth-child(odd) {
+	grid-column: 1 / -1;
+}
+
 .company-logo {
 	height: 25px;
 	display: flex;
