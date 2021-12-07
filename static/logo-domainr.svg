@@ -1,0 +1,24 @@
+<svg width="48" height="48" viewBox="0 0 48 48" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:figma="http://www.figma.com/figma/ns">
+<title>logo__domainr--color--x48</title>
+<desc>Created using Figma</desc>
+<g id="Canvas" transform="translate(-188 0)" figma:type="canvas">
+<mask id="mask0_alpha" mask-type="alpha">
+<path d="M 188 0L 236 0L 236 48L 188 48L 188 0Z" fill="#FFFFFF"/>
+</mask>
+<g id="logo__domainr--color--x48" mask="url(#mask0_alpha)" figma:type="instance">
+<g id="Logo Base 46" figma:type="instance">
+<g id="Logo Base 46" figma:type="vector">
+<use xlink:href="#path0_fill" transform="translate(189 1)" fill="#00B140"/>
+<use xlink:href="#path0_fill" transform="translate(189 1)" fill="url(#paint1_linear)"/>
+</g>
+</g>
+</g>
+</g>
+<defs>
+<linearGradient id="paint1_linear" x1="0" y1="0" x2="1" y2="0" gradientUnits="userSpaceOnUse" gradientTransform="matrix(16.0415 32.125 -31.8023 16.2052 22.9374 5.77239)">
+<stop offset="0" stop-color="#086CF7" stop-opacity="0"/>
+<stop offset="1" stop-color="#086CF7"/>
+</linearGradient>
+<path id="path0_fill" d="M 23 0C 35.7026 0 46 10.2975 46 23C 46 35.7025 35.7026 46 23 46L 2.75097 46C 2.19343 46 1.83081 45.4133 2.08015 44.9146L 3.26105 42.5528C 3.43044 42.214 3.7767 42 4.15548 42L 23 42C 33.4934 42 42 33.4934 42 23C 42 12.5066 33.4934 4 23 4L 6.6523 4C 6.36981 4 6.18608 4.29728 6.31241 4.54994L 7.39925 6.72361C 7.48394 6.893 7.65707 7 7.84646 7L 23 7C 31.8366 7 39 14.1634 39 23C 39 31.8366 31.8366 39 23 39L 6.25097 39C 5.69343 39 5.33081 38.4133 5.58015 37.9146L 10.261 28.5528C 10.4304 28.214 10.7767 28 11.1555 28L 23 28C 25.7614 28 28 25.7614 28 23C 28 20.2386 25.7614 18 23 18L 13.6523 18C 13.3698 18 13.1861 18.2973 13.3124 18.5499L 14.3992 20.7236C 14.4839 20.893 14.6571 21 14.8465 21L 23 21C 24.1046 21 25 21.8954 25 23C 25 24.1046 24.1046 25 23 25L 12.6555 25C 12.2767 25 11.9304 24.786 11.761 24.4472L 7.08015 15.0854C 6.83081 14.5867 7.19343 14 7.75097 14L 23 14C 27.9706 14 32 18.0294 32 23C 32 27.9706 27.9706 32 23 32L 13.3465 32C 13.1571 32 12.9839 32.107 12.8992 32.2764L 11.8124 34.4501C 11.6861 34.7027 11.8698 35 12.1523 35L 23 35C 29.6274 35 35 29.6274 35 23C 35 16.3726 29.6274 11 23 11L 5.65548 11C 5.2767 11 4.93044 10.786 4.76105 10.4472L 0.0801473 1.08541C -0.169191 0.586734 0.193431 0 0.750968 0L 23 0Z"/>
+</defs>
+</svg>
