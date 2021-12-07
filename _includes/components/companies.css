@@ -51,6 +51,8 @@
 	display: flex;
 	align-items: center;
 	transition: transform 100ms ease-in-out;
+	font-family: Helvetica, Arial, sans-serif;
+	text-decoration: none;
 }
 
 .company-logo:hover {
@@ -60,6 +62,7 @@
 .company-logo img {
 	height: 100%;
 	width: auto;
+	margin-right: .3em;
 }
 
 /* Resources list */
