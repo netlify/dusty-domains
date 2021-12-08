@@ -281,12 +281,13 @@ bodyClass: landing
 
 	<!-- Showcase -->
 	<section class="pancake dusty dusty-light" id="showcase">
-		<div class="showcase-grid grid-narrow">
+		<div>
 			<h2>Showcase</h2>
-			<!-- call to action until we have some sites to showcase -->
 			<p class="submit-cta">
 				<span>Submit your site and we’ll showcase it here.</span>
-			</p>
+				</p>
+		</div>
+		<div class="showcase-grid grid-narrow">
 			<ul class="sites-list" id="showcase-list">
 				<!-- LOOK! Data pulled from Airtable via the build plugin  -->
 				{% for site in submissions %}
