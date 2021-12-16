@@ -93,6 +93,7 @@
 .resources-list a img.remix  { height: 22px; margin-bottom: -.2em }
 .resources-list a img.hasura { height: 30px; margin-bottom: -.4em }
 .resources-list a img.sanity { height: 18px; margin-bottom: -.1em }
+.resources-list a img.singlestore { height: 26px; margin-bottom: -.4em }
 
 .resources-list a::before {
 	content: '🔗';
@@ -103,4 +104,13 @@
 
 .resources-list a.video::before {
 	content: '🎬';
+}
+
+@media screen and (max-width: 600px) {
+	.resources-list {
+	  text-align: left;
+	}
+	.resources-list a {
+		display: block;
+	}
 }
