@@ -8,7 +8,11 @@ bodyClass: landing
 	<div class="grid">
 		{% include "_includes/components/nav-main.njk" %}
 		<section class="grid-narrow">
-			<h1>Dusty Domains</h1>
+			
+			<h1 style="display: inline-block; position: relative;">
+			{% include "_includes/components/thermometer.njk" %}
+			<span>Dusty Domains</span>
+			</h1>
 			<p><span>This December, ship a site to Netlify and turn that dusty domain you’ve been squatting on into real money for charity.</span></p>
 		</section>
 	</div>

@@ -1,0 +1,40 @@
+#thermometer {
+  position: absolute;
+  left: -3rem;
+  top: 0;
+  bottom: 0;
+  width: 6rem;
+}
+
+#therm-scale {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  left: 2rem;
+  width: 2rem;
+  background: maroon;
+  z-index: 10;
+}
+
+#thermometer::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 2rem;
+  width: 2rem;
+  background: white;
+  z-index: 5;
+}
+
+#thermometer::after {
+  content: "";
+  position: absolute;
+  height: 4rem;
+  width: 4rem;
+  bottom: -1rem;
+  left: 1rem;
+  background: maroon;
+  border-radius: 100%;
+}
