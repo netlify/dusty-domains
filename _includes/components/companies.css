@@ -13,7 +13,7 @@
 .companies-list {
 	width: 100%;
 	max-width: 800px;
-	margin: 3em auto 2em;
+	margin: 3em auto 0;
 	font-family: 'Courier New', monospace;
 	display: grid;
 	grid-template-columns: repeat(auto-fit,minmax(300px,1fr));
@@ -37,10 +37,10 @@
 	align-items: center;
 }
 
-.companies-list div:last-of-type {
+/*.companies-list div:last-of-type {
 	font-size: 120%;
 	font-weight: 600;
-}
+}*/
 
 .companies-list div:last-of-type:nth-child(odd) {
 	grid-column: 1 / -1;
@@ -63,6 +63,39 @@
 	height: 100%;
 	width: auto;
 	margin-right: .3em;
+}
+
+/* Progress bar */
+.progress {
+	width: 100%;
+	max-width: 800px;
+	margin: 2em auto;
+	display: grid;
+	grid-template-columns: 1fr auto;
+	grid-gap: .2em 1em;
+	align-items: center;
+}
+
+.progress h4 {
+	grid-column:  1 / -1;
+	font-size: 80%;
+	text-align: left;
+}
+
+.progress > * {
+	margin: 0;
+	font-family: 'Courier New', monospace;
+	font-size: 120%;
+	font-weight: 600;
+}
+
+.progress-container {
+	border: 1px dashed var(--color-gray-L400);
+	background-color: var(--color-gray-L100);
+}
+
+.progress-bar {
+	padding: .5em;
 }
 
 /* Resources list */
