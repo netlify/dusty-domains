@@ -63,10 +63,11 @@ featuredList.setAttribute(
 
 // Async call for thermometer height
 (async () => {
-  const thermScale = document.getElementById("therm-scale");
+  const meter = document.getElementById("progress-bar");
 
   const req = await fetch("/.netlify/functions/update");
   const { percent } = await req.json();
 
-  thermScale.style.height = percent || "0%";
+  meter.style.width = percent || "0%";
+  meter.innerText = percent;
 })();

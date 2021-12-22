@@ -14,7 +14,7 @@ exports.handler = async () => {
   let count;
 
   try {
-    const req = await fetch("https://hasura-b2no.onrender.com/v1/graphql", {
+    const req = await fetch("https://dusty-domains.hasura.app/v1/graphql", {
       method: "POST",
       body: JSON.stringify({
         query,
