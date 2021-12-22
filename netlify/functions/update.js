@@ -16,6 +16,9 @@ exports.handler = async () => {
   try {
     const req = await fetch("https://dusty-domains.hasura.app/v1/graphql", {
       method: "POST",
+      headers: {
+        ["x-hasura-admin-secret"]: process.env.X_HASURA_ADMIN_SECRET,
+      },
       body: JSON.stringify({
         query,
       }),
