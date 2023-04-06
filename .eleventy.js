@@ -9,5 +9,7 @@ module.exports = function (eleventyConfig) {
     redirects: 'netlify-toml-builders',
   });
 
+  eleventyConfig.addNunjucksGlobal("getYear", () => new Date().getFullYear())
+
   eleventyConfig.dataFilterSelectors.add('eleventy.serverless.path');
 };
